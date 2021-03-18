@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using LibNoise;
 using LibNoise.Generator;
+using System;
+using Random = UnityEngine.Random;
 
 public class Cave : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class Cave : MonoBehaviour
     public int wormCount = 5;
 
     public bool wireframe = false;
+
+    public bool invert = false;
 
     public float cubeSize = 1;
     public float threshold = .5f;
@@ -31,13 +35,15 @@ public class Cave : MonoBehaviour
 
     Perlin perlinGenerator;
 
-   int [,,] caveData;
+   public delegate bool VoxelPresent (int x, int y, int z);
+
+   VoxelPresent checkVoxelPresent;
 
     // Start is called before the first frame update
     [ContextMenu("Initialize in editor")]
     void Start()
     {
-        perlinGenerator = new Perlin (frequency, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium);
+        PerlinCaveCmd();
         
         for (int i = 0; i < wormCount; i++) {
             worms.Add(RandomWorm());
@@ -47,14 +53,13 @@ public class Cave : MonoBehaviour
     private void OnDrawGizmos() {
         Gizmos.DrawWireCube(transform.position, new Vector3(caveDimensions[0], caveDimensions[1], caveDimensions[2]));
 
-
         //I plan to optimize this quite a bit later. For now it is only a proof of concept (especially since it won't stay forever)
         //-Arthur
 
         for (int x = Mathf.RoundToInt(transform.position.x) - caveDimensions[0]/2; x < Mathf.RoundToInt(transform.position.x) + caveDimensions[0]/2; x++) {
             for (int y = Mathf.RoundToInt(transform.position.y) - caveDimensions[0]/2; y < Mathf.RoundToInt(transform.position.y) + caveDimensions[1]/2; y++) {
                 for (int z = Mathf.RoundToInt(transform.position.z) - caveDimensions[0]/2; z < Mathf.RoundToInt(transform.position.z) + caveDimensions[2]/2; z++) {
-                    if (VoxelPresent (x, y, z)) {
+                    if (checkVoxelPresent (x, y, z)) {
                         if (wireframe) {
                             Gizmos.DrawWireCube(new Vector3(x, y, z), Vector3.one * cubeSize);
                         }
@@ -68,81 +73,37 @@ public class Cave : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    bool VoxelPresent (int x, int y, int z) {
+    bool PerlinLEQ (int x, int y, int z) {
          if (usePositionNoise && perlinGenerator != null)
          {
-            return perlinGenerator.GetValue(x, y, z) >= threshold;
+            return perlinGenerator.GetValue(x, y, z) <= threshold;
          } else {
-            return caveData[x,y,z] >= threshold;
-        }
+             return false;
+         }
     }
 
-    [ContextMenu("Decimate cave")]
-    void DecimateCaveCmd () {
-        caveData = DecimateCave(caveData);
+    bool PerlinGEQ (int x, int y, int z) {
+        if (usePositionNoise && perlinGenerator != null)
+        {
+        return perlinGenerator.GetValue(x, y, z) >= threshold;
+        } else {
+            return false;
+        }
     }
 
     [ContextMenu("Make Perlin Cave")]
     void PerlinCaveCmd () {
-        caveData = PerlinCave();
+        if (invert) {
+            checkVoxelPresent = PerlinLEQ;
+        } else {
+            checkVoxelPresent = PerlinGEQ;
+        }
+
+        PerlinCave();
     }
 
-    int[,,] PerlinCave () {
-        int[,,] newCave = new int[caveDimensions[0], caveDimensions[1], caveDimensions[2]];
-
+    void PerlinCave () {
         perlinGenerator = new Perlin (frequency, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium);
-
-        Vector3 origin = Random.onUnitSphere * Random.Range(int.MinValue, int.MaxValue);
-
-        for (int x = 0; x < caveDimensions[0]; x++) {
-            for (int y = 0; y < caveDimensions[1]; y++) {
-                for (int z = 0; z < caveDimensions[2]; z++) {
-                    newCave[x,y,z] = perlinGenerator.GetValue(origin.x + x, origin.y + y, origin.z + z) >= threshold ? 1 : 0;
-                }
-            }
-        }
-
-
-        return newCave;
-    }
-
-
-    int[,,] DecimateCave (int[,,] oldCave) {
-        int[,,] newCave = new int[caveDimensions[0], caveDimensions[1], caveDimensions[2]];
-
-        int cubesLeft = 0;
-
-        for (int x = 0; x < caveDimensions[0]; x++) {
-            for (int y = 0; y < caveDimensions[1]; y++) {
-                for (int z = 0; z < caveDimensions[2]; z++) {
-                    newCave[x,y,z] = Random.Range(0f, 1f) < .1f ? 0 : oldCave[x,y,z];
-                    cubesLeft += newCave[x,y,z];
-                }
-            }
-        }
-
-        print (cubesLeft + " cubes left");
-        return newCave;
-    }
-
-    int[,,] AllOnes () {
-        int[,,] newCave = new int[caveDimensions[0], caveDimensions[1], caveDimensions[2]];
-
-        for (int x = 0; x < caveDimensions[0]; x++) {
-            for (int y = 0; y < caveDimensions[1]; y++) {
-                for (int z = 0; z < caveDimensions[2]; z++) {
-                    newCave[x,y,z] = 1;
-                }
-            }
-        }
-
-        return newCave;
     }
 
     Worm RandomWorm () {

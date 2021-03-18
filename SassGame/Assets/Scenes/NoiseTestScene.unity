@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -298,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -352,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -406,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -474,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -528,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -665,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boost: 3.5
+  boost: 2
   positionLerpTime: 0.2
   mouseSensitivityCurve:
     serializedVersion: 2
@@ -738,6 +744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000
@@ -801,7 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 788899794}
   thresh: 4
-  springForce: 15
+  springForce: 50
 --- !u!54 &1174168060
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -849,6 +856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wormCount: 5
   wireframe: 0
+  invert: 0
   cubeSize: 0.9
   threshold: 0.4
   caveDimensions: 140000001400000014000000

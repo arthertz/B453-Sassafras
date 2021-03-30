@@ -15,3 +15,14 @@ or do the following:
 
 Best,
 Arthur
+
+
+Attributions:
+Scrawk's marching cubes implementation (MIT license)
+https://github.com/Scrawk/Marching-Cubes
+
+The LibNoise package w/ bindings for Unity (LGPL license)
+https://github.com/ricardojmendez/LibNoise.Unity
+
+Keijiro Takahashi's Triplanar mapping shader for UV-less texturing (public domain)
+https://github.com/keijiro/StandardTriplanar

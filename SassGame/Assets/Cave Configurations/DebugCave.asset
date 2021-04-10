@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkMat: {fileID: 2100002, guid: efe9381559c516743bd05cef82f39ebb, type: 3}
   chunkSize: 16
-  chunkDistance: 16
+  chunkDistance: 8
   viewDistance: 4
-  reloadRadius: 2
-  noiseScale: 0.4
-  surfaceLevel: -0.3
+  reloadRadius: 4
+  noiseScale: 0.3
+  surfaceLevel: 0
   frequency: 0.1
   lacunarity: 0.5
-  persistence: 0.2
+  persistence: 0.5
   seed: Osh
-  reloadThreshold: 0.4
+  reloadThreshold: 0
   octaves: 0
-  chunkReloadDelay: 1
+  chunkReloadDelay: 0.1

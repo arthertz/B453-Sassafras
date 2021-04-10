@@ -46,6 +46,7 @@
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="Cave" preserve="nothing"/>
+		<type fullname="CaveConfig" preserve="nothing"/>
 		<type fullname="PlayerChunkComponent" preserve="nothing"/>
 		<type fullname="TestMove" preserve="nothing"/>
 		<type fullname="UnityTemplateProjects.SimpleCameraController" preserve="nothing"/>

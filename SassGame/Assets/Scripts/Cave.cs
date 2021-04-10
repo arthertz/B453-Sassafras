@@ -14,47 +14,45 @@ using MarchingCubesProject;
 
 public class Cave : MonoBehaviour
 {
-    public int chunkSize = 8;
+
+    [SerializeField] CaveConfig config;
 
     List<Vector3> WormPaths = new List<Vector3>();
 
     private
     List<GameObject> chunkObjects = new List<GameObject>();
 
-    ChunkManager chunkManager;
+    private Marching marcher;
 
-    Marching marcher;
-
-    public Material chunkMat;
-    
-    public int wormSteps = 300;
+    public int wormSteps = 0;
 
     public float wormSpeed = 5f;
 
     public float wormRadius = 5f;
 
-    public int chunkDistance = 4;
+    //Config parameters
+    private Material chunkMat;
+    private int chunkSize;
+    private int chunkDistance;
+    private float reloadRadius;
+    private float noiseScale;
+    private float surfaceLevel;
+    private double frequency;
+    private double lacunarity;
+    private double persistence;
+    private string seed;
+    private float reloadThreshold = .1f;
+    private int octaves = 0;
+    //End config parameters
 
-    public float reloadRadius = 2f;
+    private bool useComplexCave = false;
 
-    public float noiseScale = 1f;
+    public int wormCount;
 
-    public int wormCount = 5;
-    public float surfaceLevel = .5f;
-    public double frequency;
-    public double lacunarity;
-    public double persistence;
-    public string seed;
-    public bool useComplexCave = true;
+    private List<Worm> worms = new List<Worm> ();
 
-    public float reloadThreshold = 1f;
 
-    //Noise texture octaves
-    public int octaves = 3;
-    
-    List<Worm> worms = new List<Worm> ();
-
-    LibNoise.ModuleBase noiseGenerator;
+    private LibNoise.ModuleBase noiseGenerator;
     
 
    public delegate float PointSampler (float x, float y, float z);
@@ -63,30 +61,45 @@ public class Cave : MonoBehaviour
 
    PointSamplerGenerator samplerFactory;
 
+    void LoadConfig() {
+        chunkMat = config.chunkMat;
+        chunkSize = config.chunkSize;
+        chunkDistance = config.chunkDistance;
+        reloadRadius = config.reloadRadius;
+        noiseScale = config.noiseScale;
+        surfaceLevel = config.surfaceLevel;
+        frequency = config.frequency;
+        lacunarity = config.lacunarity;
+        persistence = config.persistence;
+        seed = config.seed;
+        reloadThreshold = config.reloadThreshold;
+        octaves = config.octaves;
+    }
+
+
     // Start is called before the first frame update
     [ContextMenu("Initialize in editor")]
     void Awake ()
     {
+        LoadConfig();
 
         Random.InitState(seed.GetHashCode());
-
-        chunkManager = new ChunkManager();
 
         marcher = new MarchingCubes();
         
         InitCaveGenerator();
         
-        CreateWorms ();
+        //CreateWorms ();
 
-        DeployWorms();
+        //DeployWorms();
 
 
         samplerFactory = v =>
                         (x, y, z) =>
                         {
-                            foreach (Vector3 worm in WormPaths) {
+                           /* foreach (Vector3 worm in WormPaths) {
                                 if (Vector3.SqrMagnitude (v - worm) < wormRadius * wormRadius) return -1f;
-                            }
+                            }*/
 
                             return (float) noiseGenerator.GetValue(v.x + x, v.y + y, v.z + z);
                         };
@@ -171,8 +184,6 @@ public class Cave : MonoBehaviour
                     chunkComponent.InitializeChunk();
 
                     ReloadChunkAt(chunkObj, chunkComponent, chunkPosition);
-
-                    chunkManager.Register(chunkComponent);
                 }
             }
         }

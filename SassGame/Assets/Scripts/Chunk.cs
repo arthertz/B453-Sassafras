@@ -74,6 +74,8 @@ public class Chunk : MonoBehaviour
         go.AddComponent<MeshRenderer>();
         go.GetComponent<Renderer>().material = m_material;
         go.GetComponent<MeshFilter>().mesh = mesh;
+
+        go.AddComponent<MeshCollider>();
     }
 
     internal void march(Marching marcher)

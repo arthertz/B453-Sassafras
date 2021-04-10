@@ -34,13 +34,10 @@ public class Cave : MonoBehaviour
 
     public int chunkDistance = 4;
 
+    public float noiseScale = 1f;
+
     public int wormCount = 5;
-
-    public bool wireframe = false;
-
-    public bool invert = false;
-
-    public float cubeSize = 1;
+    public bool solidCave = false;
     public float surfaceLevel = .5f;
     public double frequency;
     public double lacunarity;
@@ -83,11 +80,11 @@ public class Cave : MonoBehaviour
         samplerFactory = v =>
                         (x, y, z) =>
                         {
-                            int[] key = new int[3] {Mathf.RoundToInt(x), Mathf.RoundToInt(y), Mathf.RoundToInt(z)};
-
                             foreach (Vector3 worm in WormPaths) {
                                 if (Vector3.SqrMagnitude (v - worm) < wormRadius * wormRadius) return -1f;
                             }
+
+                            if (solidCave) return surfaceLevel - .1f;
 
                             return (float) noiseGenerator.GetValue(v.x + x, v.y + y, v.z + z);
                         };
@@ -112,9 +109,10 @@ public class Cave : MonoBehaviour
 
 
     public void AdvanceWorm (Worm worm) {
-        worm.pitch = Mathf.Clamp(worm.pitch + Mathf.PerlinNoise(worm.pos.x, worm.pos.y), -25, 25);
-        worm.yaw = (360 + worm.yaw + Mathf.PerlinNoise(worm.pos.y, worm.pos.x)) % 360;
-        worm.pos += Quaternion.Euler(worm.pitch, worm.yaw, 0) * Vector3.down * wormSpeed;
+        worm.pitch = Mathf.Clamp(worm.pitch + wormSpeed * Mathf.PerlinNoise(worm.pos.x, worm.pos.y), -25, 25);
+        worm.yaw = (360 + worm.yaw + wormSpeed * Mathf.PerlinNoise(worm.pos.y, worm.pos.x)) % 360;
+
+        worm.Advance(wormSpeed);
     }
 
 
@@ -184,7 +182,7 @@ public class Cave : MonoBehaviour
     }
 
     void PerlinCave () {
-        noiseGenerator = new Perlin (frequency, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium);
+        noiseGenerator = new LibNoise.Operator.Scale(noiseScale, noiseScale, noiseScale, new Perlin (frequency, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium));
     }
 
     void ComplexCave () {

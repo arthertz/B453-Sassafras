@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 97616028}
   - component: {fileID: 97616027}
   - component: {fileID: 97616026}
-  - component: {fileID: 97616031}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -229,20 +228,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &97616031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97616025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eccc919a98f77df49ad27cee2e13eec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewDistance: 8
-  chunkSize: 16
 --- !u!1 &276534458
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,8 +333,9 @@ GameObject:
   - component: {fileID: 788899792}
   - component: {fileID: 788899791}
   - component: {fileID: 788899795}
+  - component: {fileID: 788899796}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: RealPlayer
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,6 +477,20 @@ MonoBehaviour:
     m_RotationOrder: 4
   rotationLerpTime: 0.01
   invertY: 0
+--- !u!114 &788899796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788899790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eccc919a98f77df49ad27cee2e13eec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDistance: 8
+  chunkSize: 16
 --- !u!1 &946860439
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,20 +534,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eee28cbb50c784fb197175a7041942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkSize: 8
+  chunkSize: 16
   chunkMat: {fileID: 2100002, guid: ff6dc36862fe41641bb21568d92147c9, type: 3}
-  wormSteps: 6
-  wormSpeed: 6
-  wormRadius: 25
-  chunkDistance: 8
-  wormCount: 1
-  wireframe: 0
-  invert: 1
-  cubeSize: 0.9
-  surfaceLevel: -0.3
-  frequency: 0.15
-  lacunarity: 0.1
-  persistence: 0.2
+  wormSteps: 10
+  wormSpeed: 4
+  wormRadius: 5
+  chunkDistance: 6
+  noiseScale: 0.3
+  wormCount: 3
+  solidCave: 0
+  surfaceLevel: 0
+  frequency: 0.1
+  lacunarity: 0.5
+  persistence: 0.5
   seed: Osh
   useComplexCave: 0
   octaves: 0

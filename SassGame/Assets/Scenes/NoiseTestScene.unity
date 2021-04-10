@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 97616027}
   - component: {fileID: 97616026}
   m_Layer: 0
-  m_Name: TestPlayer
+  m_Name: testSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788899790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 61.1, y: 66.1, z: 59.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -489,8 +489,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc919a98f77df49ad27cee2e13eec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewDistance: 8
+  viewDistance: 3
   chunkSize: 16
+  chunkReloadDelay: 0.1
+  SendVisibleChunks:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 946860445}
+        m_MethodName: ReloadVisibleChunks
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &946860439
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +517,7 @@ GameObject:
   - component: {fileID: 946860443}
   - component: {fileID: 946860445}
   m_Layer: 0
-  m_Name: noiseWindow
+  m_Name: CaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,17 +551,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkSize: 16
   chunkMat: {fileID: 2100002, guid: ff6dc36862fe41641bb21568d92147c9, type: 3}
-  wormSteps: 10
+  wormSteps: 0
   wormSpeed: 4
   wormRadius: 5
-  chunkDistance: 6
+  chunkDistance: 8
+  reloadRadius: 1
   noiseScale: 0.3
   wormCount: 3
-  solidCave: 0
   surfaceLevel: 0
   frequency: 0.1
   lacunarity: 0.5
   persistence: 0.5
   seed: Osh
   useComplexCave: 0
+  reloadThreshold: 0.1
   octaves: 0

@@ -18,6 +18,7 @@ public class Cave : MonoBehaviour
 
     List<Vector3> WormPaths = new List<Vector3>();
 
+    private
     List<GameObject> chunkObjects = new List<GameObject>();
 
     ChunkManager chunkManager;
@@ -34,16 +35,19 @@ public class Cave : MonoBehaviour
 
     public int chunkDistance = 4;
 
+    public float reloadRadius = 2f;
+
     public float noiseScale = 1f;
 
     public int wormCount = 5;
-    public bool solidCave = false;
     public float surfaceLevel = .5f;
     public double frequency;
     public double lacunarity;
     public double persistence;
     public string seed;
     public bool useComplexCave = true;
+
+    public float reloadThreshold = 1f;
 
     //Noise texture octaves
     public int octaves = 3;
@@ -83,8 +87,6 @@ public class Cave : MonoBehaviour
                             foreach (Vector3 worm in WormPaths) {
                                 if (Vector3.SqrMagnitude (v - worm) < wormRadius * wormRadius) return -1f;
                             }
-
-                            if (solidCave) return surfaceLevel - .1f;
 
                             return (float) noiseGenerator.GetValue(v.x + x, v.y + y, v.z + z);
                         };
@@ -128,6 +130,28 @@ public class Cave : MonoBehaviour
     }
 
 
+    public void ReloadVisibleChunks (List<Vector3> visibleChunks, Vector3 origin) {
+        Chunk chunkComp;
+        foreach (GameObject chunkObj in chunkObjects) {
+            chunkComp = chunkObj.GetComponent<Chunk>();
+            if (!visibleChunks.Contains(chunkObj.transform.position)) {
+                if (chunkComp.TimeSinceView() > reloadThreshold
+                && Vector3.SqrMagnitude(chunkObj.transform.position - origin) > reloadRadius * reloadRadius * chunkDistance * chunkDistance
+                    && visibleChunks.Count > 0) {
+                    ReloadChunkAt(chunkObj, chunkComp, visibleChunks[0]);
+                visibleChunks.RemoveAt(0);
+                }
+            }
+        }
+    }
+
+    void ReloadChunkAt (GameObject chunkObj, Chunk chunkComponent, Vector3 newPos) {
+
+        chunkComponent.ReloadChunk(chunkSize, chunkMat, newPos, samplerFactory(newPos), marcher);
+
+        chunkObj.transform.SetParent(transform);
+
+    }
 
     void InitChunks () {
         for (int x_chunk = 0; x_chunk < chunkDistance; x_chunk++) {
@@ -136,25 +160,17 @@ public class Cave : MonoBehaviour
 
                     GameObject chunkObj = new GameObject();
 
-                    Chunk chunkComponent = chunkObj.AddComponent<Chunk>();
-
-                    chunkComponent.InitializeChunk(chunkSize);
-
-                    chunkComponent.m_material = chunkMat;
-
-                    Vector3 chunkLocation = new Vector3(x_chunk*(chunkSize - 1) , y_chunk*(chunkSize - 1), z_chunk*(chunkSize - 1)) + transform.position;
-
-                    chunkComponent.sample(samplerFactory(chunkLocation));
-
-                    chunkComponent.march(marcher);
-
-                    chunkObj.transform.SetParent(transform);
-
                     chunkObj.name = "Chunk " + (x_chunk + y_chunk + z_chunk);
 
-                    chunkObj.transform.position = chunkLocation;
+                    Vector3 chunkPosition = new Vector3(x_chunk*(chunkSize - 1) , y_chunk*(chunkSize - 1), z_chunk*(chunkSize - 1)) + transform.position;
+
+                    Chunk chunkComponent = chunkObj.AddComponent<Chunk>();
 
                     chunkObjects.Add(chunkObj);
+
+                    chunkComponent.InitializeChunk();
+
+                    ReloadChunkAt(chunkObj, chunkComponent, chunkPosition);
 
                     chunkManager.Register(chunkComponent);
                 }
@@ -207,6 +223,11 @@ public class Cave : MonoBehaviour
 
     
     private void OnDrawGizmos() {
+
+        Gizmos.DrawWireCube(transform.position + Vector3.one * chunkDistance/2 *chunkSize, Vector3.one * chunkSize * chunkDistance);
+
+        Gizmos.DrawSphere(transform.position + Vector3.one * chunkDistance/2 *chunkSize, 1f);
+
         foreach (GameObject chunk in chunkObjects) {
 
             Color chunkColor =  Color.Lerp(Color.red, Color.white, chunk.GetComponent<Chunk>().TimeSinceView());

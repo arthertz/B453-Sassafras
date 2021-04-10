@@ -5,17 +5,6 @@ using MarchingCubesProject;
 using UnityEngine;
 
 
-public class ChunkData
-{
-    public List<Vector3> Verts;
-    public List<int> Indices;
-
-    public ChunkData(List<Vector3> Verts, List<int> Indices)
-    {
-        this.Verts = Verts;
-        this.Indices = Indices;
-    }
-}
 
 public class Chunk : MonoBehaviour
 {
@@ -24,9 +13,6 @@ public class Chunk : MonoBehaviour
 
     public Material m_material;
 
-    [SerializeField]
-    ChunkData data;
-
     float[] voxelData;
 
     Bounds chunkBounds;
@@ -34,6 +20,10 @@ public class Chunk : MonoBehaviour
     Mesh mesh;
 
     Plane[] planes;
+
+    GameObject meshObj;
+
+    bool initialized = false;
 
 
     float lastSeen = 0f;
@@ -52,39 +42,65 @@ public class Chunk : MonoBehaviour
         return GeometryUtility.TestPlanesAABB(planes, chunkBounds);
     }
 
-    public void InitializeChunk (int chunksize) {
+    public void InitializeChunk () {
+        meshObj = new GameObject("Mesh");
+
+        meshObj.AddComponent<MeshFilter>();
+
+        meshObj.AddComponent<MeshRenderer>();
+
+        meshObj.AddComponent<MeshCollider>();
+
+        meshObj.transform.parent = transform;
+
+
+        initialized = true;
+    }
+
+
+    public void ReloadChunk (int chunksize, Material chunkMat, Vector3 position, Cave.PointSampler sampler, Marching marcher) {
+
+        if (!initialized || !meshObj) {
+            InitializeChunk();
+        }
+
         CHUNK_SIZE = chunksize;
         voxelData = new float[CHUNK_SIZE * CHUNK_SIZE * CHUNK_SIZE];
-        data = new ChunkData(new List<Vector3>(), new List<int>());
-    }
+        
+        List<Vector3> Verts = new List<Vector3>();
+        List<int> Indices = new List<int>();
 
+        transform.position = Vector3.zero;
 
-    [ContextMenu("Reload")]
-    public void reloadChunk () {
+        m_material = chunkMat;
+
+        sample(sampler);
+
+        march(marcher, Verts, Indices);
+
+        transform.position = position;
+
         mesh = new Mesh();
-        mesh.SetVertices(data.Verts);
-        mesh.SetTriangles(data.Indices, 0);
 
-        GameObject go = new GameObject("Mesh");
-        go.transform.parent = transform;
+        mesh.SetVertices(Verts);
+        mesh.SetTriangles(Indices, 0);
         mesh.RecalculateBounds();
-        chunkBounds = mesh.bounds;
-        mesh.RecalculateNormals();
-        go.AddComponent<MeshFilter>();
-        go.AddComponent<MeshRenderer>();
-        go.GetComponent<Renderer>().material = m_material;
-        go.GetComponent<MeshFilter>().mesh = mesh;
 
-        go.AddComponent<MeshCollider>();
+        chunkBounds = mesh.bounds;
+
+        mesh.RecalculateNormals();
+
+        meshObj.GetComponent<MeshFilter>().mesh = mesh;
+
+        meshObj.GetComponent<MeshRenderer>().material = m_material;
+
     }
 
-    internal void march(Marching marcher)
+    internal void march(Marching marcher, List<Vector3> vertices, List<int> indices)
     {
         //note to self: weld vertices for better mesh data
         // this is a problem from Scrawk's implementation that I can fix for fun and profit -Arthur
-        marcher.Generate(transform.position, voxelData, CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE, data.Verts, data.Indices);
-
-        reloadChunk();
+        marcher.Generate(transform.position, voxelData, CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE, vertices, indices);
     }
 
     internal void sample(Cave.PointSampler sampler)
@@ -107,16 +123,6 @@ public class Chunk : MonoBehaviour
                 }
             }
         }
-    }
-
-    internal void load (ChunkData savedData) {
-        data = savedData;
-
-        reloadChunk();
-    }
-
-    public ChunkData GetData () {
-        return data;
     }
 
     public void DrawBounds (Color chunkColor) {

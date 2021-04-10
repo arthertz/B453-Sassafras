@@ -86,7 +86,7 @@ public class Cave : MonoBehaviour
                             int[] key = new int[3] {Mathf.RoundToInt(x), Mathf.RoundToInt(y), Mathf.RoundToInt(z)};
 
                             foreach (Vector3 worm in WormPaths) {
-                                if (Vector3.SqrMagnitude (new Vector3(x, y, z) - worm) < wormRadius * wormRadius) return -5f;
+                                if (Vector3.SqrMagnitude (v - worm) < wormRadius * wormRadius) return -1f;
                             }
 
                             return (float) noiseGenerator.GetValue(v.x + x, v.y + y, v.z + z);

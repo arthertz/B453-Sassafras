@@ -12,14 +12,18 @@ public class MyVectorEvent : UnityEvent<List<Vector3>, Vector3>
 
 public class PlayerChunkComponent : MonoBehaviour
 {
-    public
-    int viewDistance = 8;
 
-    public
-    int chunkSize = 32;
+    [SerializeField]
+    CaveConfig config;
 
-    public
-    float chunkReloadDelay = 1f;
+    private
+    int viewDistance;
+
+    private
+    int chunkSize;
+
+    private
+    float chunkReloadDelay;
 
     [SerializeField]
     MyVectorEvent SendVisibleChunks = new MyVectorEvent();
@@ -28,6 +32,12 @@ public class PlayerChunkComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        chunkSize = config.chunkSize;
+
+        viewDistance = config.viewDistance;
+
+        chunkReloadDelay = config.chunkReloadDelay;
+
         InvokeRepeating("TriggerChunkReload", chunkReloadDelay, chunkReloadDelay);
     }
 
@@ -52,16 +62,23 @@ public class PlayerChunkComponent : MonoBehaviour
 
         Bounds chunkBound;
 
+        Vector3 chunkCenter;
+
         for (int x = -viewDistance; x < viewDistance; x++)
         {
             for (int y = -viewDistance; y <  viewDistance; y++)
             {
                 for (int z = -viewDistance; z < viewDistance; z++)
                 {
-                    chunkBound = new Bounds (transform.position + (chunkSize-1) * new Vector3 (x +.5f ,y+.5f , z+.5f), Vector3.one * chunkSize/2);
+                    chunkCenter = transform.position + (chunkSize-1) * new Vector3 (x +.5f ,y+.5f , z+.5f);
 
-                    if (GeometryUtility.TestPlanesAABB(planes, chunkBound)) {
-                        visibleChunks.Add(transform.position + (chunkSize-1) * new Vector3(x, y, z));
+                    if (!Physics.Linecast(transform.position, chunkCenter))
+                    {
+                        chunkBound = new Bounds (chunkCenter, Vector3.one * chunkSize/2);
+
+                        if (GeometryUtility.TestPlanesAABB(planes, chunkBound)) {
+                            visibleChunks.Add(transform.position + (chunkSize-1) * new Vector3(x, y, z));
+                        }
                     }
                 }
             }

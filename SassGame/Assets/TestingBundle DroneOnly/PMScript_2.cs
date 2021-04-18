@@ -15,6 +15,10 @@ public class PMScript_2 : MonoBehaviour
     private Vector2 lastInputEvent;//The last recieved non-zerro input value
     private float inputLagTimer;//The time since the last recieved non-zero input value
     private float activeForwardSpeed, activeStrafeSpeed; //Horizontal/Vertical movement
+    private float DroneSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
+    [SerializeField] float DroneAudioRevSpeed = 60; //Changes how fast/slow engine sound revs up/down
+    private float DroneCamSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
+    [SerializeField] float DroneCamAudioRevSpeed = 80; //Changes how fast/slow engine sound revs up/down
     
     private void OnEnable() {
         //Reset the slate
@@ -70,6 +74,18 @@ public class PMScript_2 : MonoBehaviour
         transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime) + (transform.right * activeStrafeSpeed * Time.deltaTime);
         //transform.position = Vector3.ClampMagnitude(transform.position, speed * speed);
             //Debug.Log("Y Position: " + transform.position.y);
+
+        //Audio for drone movement
+        //Kind of arbitrary right now, but will update the same on any frame rate because of deltaTime
+        float velocityMagnitude = Mathf.Abs(activeForwardSpeed) + Mathf.Abs(activeStrafeSpeed);
+        if (velocityMagnitude > 0 && DroneSpeedRTPC < 100) {
+            DroneSpeedRTPC += DroneAudioRevSpeed * Time.deltaTime;
+            AkSoundEngine.SetRTPCValue("Drone_Speed", DroneSpeedRTPC, gameObject);
+        }
+        else if (DroneSpeedRTPC > 0) {
+            DroneSpeedRTPC -= DroneAudioRevSpeed * Time.deltaTime;
+            AkSoundEngine.SetRTPCValue("Drone_Speed", DroneSpeedRTPC, gameObject);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -77,7 +93,6 @@ public class PMScript_2 : MonoBehaviour
         //The wanted velocity is the current input scaled by ensitivity
         //This is also the maximum velocity
         Vector2 wantedVelocity = GetInput() * sensitivity;
-
 
         //Calculate new rotation
         velocity = new Vector2(
@@ -91,7 +106,20 @@ public class PMScript_2 : MonoBehaviour
         //Convert the rotation to euler angles
         transform.localEulerAngles = new Vector3(rotation.y, rotation.x, 0);
 
-        
+        //Audio for drone cam movement
+        //Kind of arbitrary right now, but will update the same on any frame rate because of deltaTime
+        float velocityMagnitude = Mathf.Abs(velocity.magnitude);
+
+        DroneCamSpeedRTPC = Mathf.Clamp(velocityMagnitude, 0, 100);
+        AkSoundEngine.SetRTPCValue("Drone_Cam_Move", DroneCamSpeedRTPC, gameObject);
+        // if (velocityMagnitude > 0 && DroneCamSpeedRTPC < 100) {
+        //     DroneCamSpeedRTPC += DroneCamAudioRevSpeed * Time.deltaTime;
+        //     AkSoundEngine.SetRTPCValue("Drone_Cam_Move", DroneCamSpeedRTPC, gameObject);
+        // }
+        // else if (DroneCamSpeedRTPC > 0) {
+        //     DroneCamSpeedRTPC -= DroneCamAudioRevSpeed * Time.deltaTime;
+        //     AkSoundEngine.SetRTPCValue("Drone_Cam_Move", DroneCamSpeedRTPC, gameObject);
+        // }
 
         if (Input.GetKeyUp(KeyCode.Escape)){
             Cursor.visible = true;

@@ -1,0 +1,253 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb89970ebb083643875e25f116e8328, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: d2e4332804db0449b6b98cea0bb1c845
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: d2e4332804db0449b6b98cea0bb1c845
+    GuidInternal: 
+    m_lastTime: -8585828412062233135
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 97e60e80bf37c4449a89f6ce743cd567
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: 97e60e80bf37c4449a89f6ce743cd567
+    GuidInternal: 
+    m_lastTime: -8585828330920251264
+    List:
+    - name: Main_Verb
+      guid: 2c12b4e623c9f448b1ddb0547ac69351
+      id: 1807895366
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97e60e80bf37c4449a89f6ce743cd567
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Main_Verb
+        ObjectType: 1
+        guid: 2c12b4e623c9f448b1ddb0547ac69351
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 97e60e80bf37c4449a89f6ce743cd567
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: ee5ccb8c856ba64f8eb84a6fa1efb46a
+    ParentPath: SoundBanks\Default Work Unit
+    guid: ee5ccb8c856ba64f8eb84a6fa1efb46a
+    GuidInternal: 
+    m_lastTime: -8585828331934834770
+    List:
+    - name: Main_SoundBank
+      guid: 1069aa98b8918e499febc158c4a34fbb
+      id: 2228651116
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ee5ccb8c856ba64f8eb84a6fa1efb46a
+      - ElementName: Main_SoundBank
+        ObjectType: 7
+        guid: 1069aa98b8918e499febc158c4a34fbb
+      Path: SoundBanks\Default Work Unit\Main_SoundBank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 4497cbf5b09dc4478afe9d207989d6c6
+    ParentPath: Events\Default Work Unit
+    guid: 4497cbf5b09dc4478afe9d207989d6c6
+    GuidInternal: 
+    m_lastTime: -8585828346967549646
+    List:
+    - name: Drone_Cam_Moving
+      guid: ea57c61799c07747a5802fc4659e2f51
+      id: 3519287398
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4497cbf5b09dc4478afe9d207989d6c6
+      - ElementName: Drone_Cam_Moving
+        ObjectType: 3
+        guid: ea57c61799c07747a5802fc4659e2f51
+      Path: Events\Default Work Unit\Drone_Cam_Moving
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Drone_Moving
+      guid: 8743f8a012938d4aaf7c5a91b5b6bae7
+      id: 2571063494
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4497cbf5b09dc4478afe9d207989d6c6
+      - ElementName: Drone_Moving
+        ObjectType: 3
+        guid: 8743f8a012938d4aaf7c5a91b5b6bae7
+      Path: Events\Default Work Unit\Drone_Moving
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: a30d218e61a85548b2c4900481d0acb9
+    ParentPath: Game Parameters\Default Work Unit
+    guid: a30d218e61a85548b2c4900481d0acb9
+    GuidInternal: 
+    m_lastTime: -8585828325554961877
+    List:
+    - name: Drone_Cam_Move
+      guid: 1bb57b14a609c34888afb01b9d8a0efc
+      id: 3300680795
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a30d218e61a85548b2c4900481d0acb9
+      - ElementName: Drone_Cam_Move
+        ObjectType: 13
+        guid: 1bb57b14a609c34888afb01b9d8a0efc
+      Path: Game Parameters\Default Work Unit\Drone_Cam_Move
+    - name: Drone_Speed
+      guid: cc6c94e1c8ac1041afa2cf59523f34d0
+      id: 1382379429
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a30d218e61a85548b2c4900481d0acb9
+      - ElementName: Drone_Speed
+        ObjectType: 13
+        guid: cc6c94e1c8ac1041afa2cf59523f34d0
+      Path: Game Parameters\Default Work Unit\Drone_Speed
+    - name: Room_Size
+      guid: dc7ea24baed2f3458580da2b396c38b1
+      id: 2021037140
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a30d218e61a85548b2c4900481d0acb9
+      - ElementName: Room_Size
+        ObjectType: 13
+        guid: dc7ea24baed2f3458580da2b396c38b1
+      Path: Game Parameters\Default Work Unit\Room_Size
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: e84d4370df70ab429e798ac15b923eda
+    ParentPath: States\Default Work Unit
+    guid: e84d4370df70ab429e798ac15b923eda
+    GuidInternal: 
+    m_lastTime: -8585828412059759666
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 65776097485e28468525e9bd793ccb21
+    ParentPath: Switches\Default Work Unit
+    guid: 65776097485e28468525e9bd793ccb21
+    GuidInternal: 
+    m_lastTime: -8585828412060118674
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 2a285f546ec21247b8464641c41ab7a6
+    ParentPath: Triggers\Default Work Unit
+    guid: 2a285f546ec21247b8464641c41ab7a6
+    GuidInternal: 
+    m_lastTime: -8585828412061175926
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 03000000040000000500000006000000070000000b0000000c000000290000002a000000
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 0
+  CurrentPluginConfig: 

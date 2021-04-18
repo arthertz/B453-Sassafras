@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Drone_Moving" ID="{A0F84387-9312-4A8D-AF7C-5A91B5B6BAE7}">
+					<ChildrenList>
+						<Action Name="" ID="{E6D08414-F036-48FE-B50B-E5053C6C6B7F}" ShortID="888978225">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Motor" ID="{3021D7BE-4D42-4F58-B5FE-6ACBBFA83E66}" WorkUnitID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Drone_Cam_Moving" ID="{17C657EA-C099-4777-A580-2FC4659E2F51}">
+					<ChildrenList>
+						<Action Name="" ID="{E856A2E8-9505-4D51-A60E-1E037E1A5C84}" ShortID="758510924">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CamMove" ID="{FBE7C44D-5786-4743-819A-26684061E805}" WorkUnitID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

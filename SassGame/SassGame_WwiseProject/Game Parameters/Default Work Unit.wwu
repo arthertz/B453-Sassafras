@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}" SchemaVersion="103">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Drone_Speed" ID="{E1946CCC-ACC8-4110-AFA2-CF59523F34D0}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Drone_Cam_Move" ID="{147BB51B-09A6-48C3-88AF-B01B9D8A0EFC}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Room_Size" ID="{4BA27EDC-D2AE-45F3-8580-DA2B396C38B1}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1beecceef2dab4d88a27e55d58d191, type: 3}
   m_Name: BetterQuality
   m_EditorClassIdentifier: 
-  chunkMat: {fileID: 2100000, guid: e65a99b96daf6fd458625bd720085359, type: 2}
+  chunkMat: {fileID: 2100000, guid: 36710dcd25f77a947b677dd9cbf999a4, type: 2}
   chunkSize: 16
   chunkDistance: 8
   viewDistance: 4

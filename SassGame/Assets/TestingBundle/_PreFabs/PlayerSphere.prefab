@@ -508,11 +508,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d793d97f54cfd8489655dbf199554af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: {x: 1000, y: -1000}
-  acceleration: {x: 1000, y: 1000}
+  sensitivity: {x: 500, y: -500}
+  acceleration: {x: 500, y: 500}
   inputLagPeriod: 0.001
   maxVerticalAngleFromHorizon: 90
   speed: 5
+  period: 0.001
 --- !u!1001 &4172284251791124003
 PrefabInstance:
   m_ObjectHideFlags: 0

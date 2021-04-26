@@ -9,12 +9,13 @@ public class PMScript_2 : MonoBehaviour
     [SerializeField] private float inputLagPeriod;
     [SerializeField] private float maxVerticalAngleFromHorizon;
     [SerializeField] private float speed = 10.0f;
-    //[SerializeField] private float surfaceLevel = 3.5f;
+    [SerializeField] private float period = 0.001f; //Period of the ocillation
     private Vector2 velocity;
     private Vector2 rotation; //the current rotation in degrees
     private Vector2 lastInputEvent;//The last recieved non-zerro input value
     private float inputLagTimer;//The time since the last recieved non-zero input value
     private float activeForwardSpeed, activeStrafeSpeed; //Horizontal/Vertical movement
+    private Vector3 bob;  
     private float DroneSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
     [SerializeField] float DroneAudioRevSpeed = 60; //Changes how fast/slow engine sound revs up/down
     private float DroneCamSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
@@ -68,10 +69,12 @@ public class PMScript_2 : MonoBehaviour
     }
     void FixedUpdate()
     {
+        bob = new Vector3(0, period * Mathf.Sin(Time.time), 0);
+
         activeForwardSpeed = Input.GetAxisRaw("Vertical") * speed;
         activeStrafeSpeed = Input.GetAxisRaw("Horizontal") * speed;
 
-        transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime) + (transform.right * activeStrafeSpeed * Time.deltaTime);
+        transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime) + (transform.right * activeStrafeSpeed * Time.deltaTime) + (bob);
         //transform.position = Vector3.ClampMagnitude(transform.position, speed * speed);
             //Debug.Log("Y Position: " + transform.position.y);
 

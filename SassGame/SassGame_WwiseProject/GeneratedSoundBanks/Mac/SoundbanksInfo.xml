@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

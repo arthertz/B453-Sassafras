@@ -30,7 +30,7 @@ namespace AK.Wwise
 #if UNITY_EDITOR
 			if (playingId == AkSoundEngine.AK_INVALID_PLAYING_ID && AkSoundEngine.IsInitialized())
 			{
-				UnityEngine.Debug.LogError("WwiseUnity: Could not post event (name: " + Name + ", ID: " + Id +
+					UnityEngine.Debug.LogError("WwiseUnity: Could not post event (name: " + Name + ", ID: " + Id +
 				                           "). Please make sure to load or rebuild the appropriate SoundBank.");
 			}
 #endif

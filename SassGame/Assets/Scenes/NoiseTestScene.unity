@@ -466,6 +466,26 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.g
       value: 0.06666667
       objectReference: {fileID: 0}
+    - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: sensitivity.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: sensitivity.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: acceleration.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: acceleration.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4554250463035315722, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
       propertyPath: m_RootOrder
@@ -730,6 +750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1557489608}
   - component: {fileID: 1557489607}
+  - component: {fileID: 1557489609}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -777,6 +798,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557489609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557489606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daec1bed69efaad4da1e42ea5a30004f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ff433b269d8aa8944984096c7be341d1,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1 &1669412860
 GameObject:
   m_ObjectHideFlags: 0

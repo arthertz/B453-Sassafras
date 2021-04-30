@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1beecceef2dab4d88a27e55d58d191, type: 3}
+  m_Name: BestQuality
+  m_EditorClassIdentifier: 
+  chunkMat: {fileID: 2100002, guid: efe9381559c516743bd05cef82f39ebb, type: 3}
+  enableCollision: 1
+  ignoreWalls: 0
+  chunkSize: 32
+  chunkDistance: 4
+  viewDistance: 4
+  maxViewDist: 64
+  reloadRadius: 3
+  noiseScale: 0.3
+  surfaceLevel: 0
+  frequency: 0.1
+  lacunarity: 0.5
+  persistence: 0.5
+  seed: Osh
+  reloadThreshold: 0
+  octaves: 0
+  chunkReloadDelay: 0.001

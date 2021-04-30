@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using LibNoise;
@@ -15,6 +16,7 @@ using MarchingCubesProject;
 public class Cave : MonoBehaviour
 {
 
+    [SerializeField] private bool debug = false;
     [SerializeField] CaveConfig config;
 
     List<Vector3> WormPaths = new List<Vector3>();
@@ -143,18 +145,64 @@ public class Cave : MonoBehaviour
     }
 
 
-    public void ReloadVisibleChunks (List<Vector3> visibleChunks, Vector3 origin) {
-        Chunk chunkComp;
-        foreach (GameObject chunkObj in chunkObjects) {
-            chunkComp = chunkObj.GetComponent<Chunk>();
-            if (!visibleChunks.Contains(chunkObj.transform.position)) {
-                if (chunkComp.TimeSinceView() > reloadThreshold
-                && Vector3.SqrMagnitude(chunkObj.transform.position - origin) > reloadRadius * reloadRadius * chunkDistance * chunkDistance
-                    && visibleChunks.Count > 0) {
-                    ReloadChunkAt(chunkObj, chunkComp, visibleChunks[0]);
-                visibleChunks.RemoveAt(0);
-                }
+    /*
+    // Checks if one if the visible chunks is already at this position
+    */
+    private bool ChunkActiveAt (Vector3 chunkPosition) {
+        foreach (GameObject g in chunkObjects) {
+            if (Mathf.Approximately(Vector3.SqrMagnitude(g.transform.position - chunkPosition), 0)) {
+                return true;
             }
+        }
+
+        return false;
+    }
+
+
+    public void ReloadVisibleChunks (List<Vector3> visibleChunks, Vector3 origin) {
+
+        //Make a list of chunk positions that are not active but need to be loaded in
+        List<Vector3> inactiveVisible = new List<Vector3>();
+
+        foreach (Vector3 v in visibleChunks) {
+            if (!ChunkActiveAt(v)) {
+                inactiveVisible.Add(v);
+            }
+        }
+
+        if (inactiveVisible.Count == 0) {
+            return;
+        }
+
+        //Make a list of chunks that are active but ready to be reloaded
+        List<GameObject> activeUnseen= new List<GameObject>();
+
+
+        Chunk chunkComp;
+        foreach (GameObject g in chunkObjects) {
+            chunkComp = g.GetComponent<Chunk>();
+            if (!visibleChunks.Contains(g.transform.position)
+            && chunkComp.TimeSinceView() > reloadThreshold
+            && Vector3.SqrMagnitude (chunkComp.transform.position - origin) > reloadRadius * chunkSize) {
+                activeUnseen.Add(g);
+            }
+        }
+
+        //Order activeUnseen by time since last seen. This would be faster with a heap/priority queue but this is good enough
+        activeUnseen = activeUnseen.OrderByDescending(chunkObject => chunkObject.GetComponent<Chunk>().TimeSinceView()).ToList();
+
+        //Order inactiveVisible by importance. This would be faster with a heap/priority queue but this is good enough
+        inactiveVisible = inactiveVisible.OrderBy(chunkVector => Vector3.SqrMagnitude(chunkVector - origin)).ToList();
+
+        if (debug) print (inactiveVisible.Count + " " + activeUnseen.Count);
+
+        //While there are active chunks out of view && chunks left load...
+        while (activeUnseen.Count > 0 && inactiveVisible.Count > 0) {
+            ReloadChunkAt(activeUnseen[0],
+                         activeUnseen[0].GetComponent<Chunk>(),
+                         inactiveVisible[0]);
+            inactiveVisible.RemoveAt(0);
+            activeUnseen.RemoveAt(0);
         }
     }
 
@@ -175,7 +223,7 @@ public class Cave : MonoBehaviour
 
                     chunkObj.name = "Chunk " + (x_chunk + y_chunk + z_chunk);
 
-                    Vector3 chunkPosition = new Vector3(x_chunk*(chunkSize - 1) , y_chunk*(chunkSize - 1), z_chunk*(chunkSize - 1)) + transform.position;
+                    Vector3 chunkPosition = new Vector3(x_chunk*(chunkSize) , y_chunk*(chunkSize), z_chunk*(chunkSize)) + transform.position;
 
                     Chunk chunkComponent = chunkObj.AddComponent<Chunk>();
 

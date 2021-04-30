@@ -25,8 +25,12 @@ public class PlayerChunkComponent : MonoBehaviour
     private
     float chunkReloadDelay;
 
+    private bool ignoreWalls;
+
     [SerializeField]
     MyVectorEvent SendVisibleChunks = new MyVectorEvent();
+
+    private float forceReloadDistanceSqrd;
 
 
     // Start is called before the first frame update
@@ -37,6 +41,14 @@ public class PlayerChunkComponent : MonoBehaviour
         viewDistance = config.viewDistance;
 
         chunkReloadDelay = config.chunkReloadDelay;
+
+        ignoreWalls = config.ignoreWalls;
+
+        forceReloadDistanceSqrd = chunkSize * chunkSize * config.reloadRadius * config.reloadRadius;
+
+        //Set the camera render distance to match the view distance
+        //The view distance is internally kept in chunk units, so you also must convert it to meters
+        Camera.main.farClipPlane = Mathf.Min(config.maxViewDist, chunkSize * viewDistance);
 
         InvokeRepeating("TriggerChunkReload", chunkReloadDelay, chunkReloadDelay);
     }
@@ -64,20 +76,32 @@ public class PlayerChunkComponent : MonoBehaviour
 
         Vector3 chunkCenter;
 
+        Vector3 chunkOrigin = new Vector3( Mathf.Round(transform.position.x / chunkSize) * chunkSize,
+                                           Mathf.Round(transform.position.y / chunkSize) * chunkSize,
+                                           Mathf.Round(transform.position.z / chunkSize) * chunkSize);
+
+        Vector3 chunkDelta;
+
+        bool chunkVisible;
+
         for (int x = -viewDistance; x < viewDistance; x++)
         {
             for (int y = -viewDistance; y <  viewDistance; y++)
             {
                 for (int z = -viewDistance; z < viewDistance; z++)
                 {
-                    chunkCenter = transform.position + (chunkSize-1) * new Vector3 (x +.5f ,y+.5f , z+.5f);
+                    chunkDelta = (chunkSize) * new Vector3 (x + .5f , y + .5f, z + .5f);
+                    chunkCenter = chunkOrigin + chunkDelta;
+                    chunkVisible = !Physics.Linecast(transform.position, chunkCenter);
 
-                    if (!Physics.Linecast(transform.position, chunkCenter))
+                    //the linecast only matters if the chunk is far away
+                    //if it is close render it no matter what to avoid weird holes
+                    if (chunkVisible || chunkDelta.sqrMagnitude < forceReloadDistanceSqrd || ignoreWalls)
                     {
-                        chunkBound = new Bounds (chunkCenter, Vector3.one * chunkSize/2);
+                        chunkBound = new Bounds (chunkCenter, Vector3.one * chunkSize);
 
                         if (GeometryUtility.TestPlanesAABB(planes, chunkBound)) {
-                            visibleChunks.Add(transform.position + (chunkSize-1) * new Vector3(x, y, z));
+                            visibleChunks.Add(chunkOrigin + (chunkSize) * new Vector3(x, y, z));
                         }
                     }
                 }

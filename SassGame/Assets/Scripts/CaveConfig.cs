@@ -7,10 +7,17 @@ using UnityEngine;
 public class CaveConfig : ScriptableObject
 {
     public Material chunkMat;
+    
+    public bool enableCollision = false;
+
+    public bool ignoreWalls = false;
+
     public int chunkSize = 8;
     public int chunkDistance = 4;
     
     public int viewDistance = 8;
+
+    public float maxViewDist = 64f;
 
     public float reloadRadius = 2f;
     public float noiseScale = .5f;

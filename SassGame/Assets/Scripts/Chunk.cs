@@ -53,7 +53,6 @@ public class Chunk : MonoBehaviour
 
         meshObj.transform.parent = transform;
 
-
         initialized = true;
     }
 
@@ -64,7 +63,7 @@ public class Chunk : MonoBehaviour
             InitializeChunk();
         }
 
-        CHUNK_SIZE = chunksize;
+        CHUNK_SIZE = chunksize+1;
         voxelData = new float[CHUNK_SIZE * CHUNK_SIZE * CHUNK_SIZE];
         
         List<Vector3> Verts = new List<Vector3>();
@@ -93,6 +92,8 @@ public class Chunk : MonoBehaviour
         meshObj.GetComponent<MeshFilter>().mesh = mesh;
 
         meshObj.GetComponent<MeshRenderer>().material = m_material;
+
+        meshObj.GetComponent<MeshCollider>().sharedMesh = mesh;
 
     }
 

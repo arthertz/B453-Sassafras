@@ -16,10 +16,10 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 1
   m_FogColor: {r: 0, g: 0.06551361, b: 0.23584908, a: 1}
-  m_FogMode: 1
-  m_FogDensity: 0.5
+  m_FogMode: 3
+  m_FogDensity: 0.03
   m_LinearFogStart: 48
-  m_LinearFogEnd: 64
+  m_LinearFogEnd: 128
   m_AmbientSkyColor: {r: 0, g: 0.6509804, b: 1.945098, a: 1}
   m_AmbientEquatorColor: {r: 0, g: 0.19607843, b: 0.32156864, a: 1}
   m_AmbientGroundColor: {r: 0.007843138, g: 0.004901961, b: 0.042156864, a: 1}
@@ -371,7 +371,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -413,7 +413,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -469,12 +469,12 @@ PrefabInstance:
     - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
       propertyPath: sensitivity.x
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
       propertyPath: sensitivity.y
-      value: -100
+      value: -1000
       objectReference: {fileID: 0}
     - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
@@ -485,6 +485,26 @@ PrefabInstance:
         type: 3}
       propertyPath: acceleration.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554250462603876884, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: m_Range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554250462603876884, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554250462912201482, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: m_Range
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554250462912201482, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4554250463035315722, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
@@ -566,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc919a98f77df49ad27cee2e13eec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 16175aff8a8ac0a449f8a6da0c162e37, type: 2}
+  config: {fileID: 11400000, guid: 80cf352565572a245b07a62cf56ea4b3, type: 2}
   SendVisibleChunks:
     m_PersistentCalls:
       m_Calls:
@@ -625,11 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  config: {fileID: 11400000, guid: 16175aff8a8ac0a449f8a6da0c162e37, type: 2}
-  wormSteps: 0
-  wormSpeed: 4
-  wormRadius: 5
-  wormCount: 3
+  config: {fileID: 11400000, guid: 80cf352565572a245b07a62cf56ea4b3, type: 2}
 --- !u!1 &1067995278
 GameObject:
   m_ObjectHideFlags: 0

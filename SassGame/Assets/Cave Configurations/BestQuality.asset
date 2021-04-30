@@ -16,9 +16,9 @@ MonoBehaviour:
   enableCollision: 1
   ignoreWalls: 0
   chunkSize: 32
-  chunkDistance: 4
-  viewDistance: 4
-  maxViewDist: 64
+  chunkDistance: 6
+  viewDistance: 7
+  maxViewDist: 128
   reloadRadius: 3
   noiseScale: 0.3
   surfaceLevel: 0
@@ -26,6 +26,6 @@ MonoBehaviour:
   lacunarity: 0.5
   persistence: 0.5
   seed: Osh
-  reloadThreshold: 0
+  reloadThreshold: 1
   octaves: 0
-  chunkReloadDelay: 0.001
+  chunkReloadDelay: 0.1

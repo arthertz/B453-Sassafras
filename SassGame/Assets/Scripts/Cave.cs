@@ -19,18 +19,10 @@ public class Cave : MonoBehaviour
     [SerializeField] private bool debug = false;
     [SerializeField] CaveConfig config;
 
-    List<Vector3> WormPaths = new List<Vector3>();
-
     private
     List<GameObject> chunkObjects = new List<GameObject>();
 
     private Marching marcher;
-
-    public int wormSteps = 0;
-
-    public float wormSpeed = 5f;
-
-    public float wormRadius = 5f;
 
     //Config parameters
     private Material chunkMat;
@@ -48,11 +40,6 @@ public class Cave : MonoBehaviour
     //End config parameters
 
     private bool useComplexCave = false;
-
-    public int wormCount;
-
-    private List<Worm> worms = new List<Worm> ();
-
 
     private LibNoise.ModuleBase noiseGenerator;
     
@@ -90,11 +77,6 @@ public class Cave : MonoBehaviour
         marcher = new MarchingCubes();
         
         InitCaveGenerator();
-        
-        //CreateWorms ();
-
-        //DeployWorms();
-
 
         samplerFactory = v =>
                         (x, y, z) =>
@@ -109,38 +91,6 @@ public class Cave : MonoBehaviour
         marcher.Surface = surfaceLevel;
 
         InitChunks();
-
-    }
-
-    void CreateWorms () {
-        for (int i = 0; i < wormCount; i++) {
-            worms.Add(RandomWorm());
-        }
-    }
-
-
-    void SampleWormPoint (Worm worm) {
-
-        WormPaths.Add(worm.pos);
-    }
-
-
-    public void AdvanceWorm (Worm worm) {
-        worm.pitch = Mathf.Clamp(worm.pitch + wormSpeed * Mathf.PerlinNoise(worm.pos.x, worm.pos.y), -25, 25);
-        worm.yaw = (360 + worm.yaw + wormSpeed * Mathf.PerlinNoise(worm.pos.y, worm.pos.x)) % 360;
-
-        worm.Advance(wormSpeed);
-    }
-
-
-    void DeployWorms () {
-
-        for (int t = 0; t < wormSteps; t++) {
-            foreach (Worm worm in worms) {
-                SampleWormPoint(worm);
-                AdvanceWorm(worm);
-            }
-        }
 
     }
 
@@ -295,9 +245,5 @@ public class Cave : MonoBehaviour
         }
 
         Gizmos.color = Color.red;
-
-        foreach (Vector3 worm in WormPaths) {
-            Gizmos.DrawWireSphere(worm, wormRadius);
-        }
     }
 }

@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccc919a98f77df49ad27cee2e13eec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 80cf352565572a245b07a62cf56ea4b3, type: 2}
+  config: {fileID: 11400000, guid: 16175aff8a8ac0a449f8a6da0c162e37, type: 2}
   SendVisibleChunks:
     m_PersistentCalls:
       m_Calls:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  config: {fileID: 11400000, guid: 80cf352565572a245b07a62cf56ea4b3, type: 2}
+  config: {fileID: 11400000, guid: 16175aff8a8ac0a449f8a6da0c162e37, type: 2}
   wormSteps: 0
   wormSpeed: 4
   wormRadius: 5

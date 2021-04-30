@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1beecceef2dab4d88a27e55d58d191, type: 3}
   m_Name: BetterQuality
   m_EditorClassIdentifier: 
-  enableCollision: 1
   chunkMat: {fileID: 2100000, guid: 36710dcd25f77a947b677dd9cbf999a4, type: 2}
+  enableCollision: 1
+  ignoreWalls: 0
   chunkSize: 16
-  chunkDistance: 8
+  chunkDistance: 6
   viewDistance: 4
-  reloadRadius: 1
+  maxViewDist: 64
+  reloadRadius: 3
   noiseScale: 0.3
   surfaceLevel: 0
   frequency: 0.1
   lacunarity: 0.5
   persistence: 0.5
   seed: Osh
-  reloadThreshold: 0.1
+  reloadThreshold: 0
   octaves: 0
-  chunkReloadDelay: 0.1
+  chunkReloadDelay: 0.001

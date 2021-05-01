@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 57584295}
   - component: {fileID: 57584294}
   - component: {fileID: 57584293}
+  - component: {fileID: 57584298}
   m_Layer: 0
   m_Name: testSphere (2)
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57584292}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -232,6 +233,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57584298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57584292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &97616025
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +259,7 @@ GameObject:
   - component: {fileID: 97616028}
   - component: {fileID: 97616027}
   - component: {fileID: 97616026}
+  - component: {fileID: 97616031}
   m_Layer: 0
   m_Name: testSphere
   m_TagString: Untagged
@@ -260,7 +275,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97616025}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -342,6 +357,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97616031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97616025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &276534458
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +594,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSphere
       objectReference: {fileID: 0}
+    - target: {fileID: 4554250463035315726, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e60df0e8ed509d43afbbd91f1c46c3f, type: 3}
 --- !u!1 &684496378 stripped
@@ -659,6 +692,7 @@ GameObject:
   - component: {fileID: 1067995281}
   - component: {fileID: 1067995280}
   - component: {fileID: 1067995279}
+  - component: {fileID: 1067995284}
   m_Layer: 0
   m_Name: testSphere (4)
   m_TagString: Untagged
@@ -674,7 +708,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067995278}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -756,6 +790,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067995284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067995278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &1557489606
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +899,7 @@ GameObject:
   - component: {fileID: 1669412863}
   - component: {fileID: 1669412862}
   - component: {fileID: 1669412861}
+  - component: {fileID: 1669412866}
   m_Layer: 0
   m_Name: testSphere (3)
   m_TagString: Untagged
@@ -867,7 +915,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669412860}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -949,6 +997,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669412866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669412860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &1814776481
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +1023,7 @@ GameObject:
   - component: {fileID: 1814776484}
   - component: {fileID: 1814776483}
   - component: {fileID: 1814776482}
+  - component: {fileID: 1814776487}
   m_Layer: 0
   m_Name: testSphere (5)
   m_TagString: Untagged
@@ -977,7 +1039,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814776481}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1059,6 +1121,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814776487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814776481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &1952658739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1147,7 @@ GameObject:
   - component: {fileID: 1952658742}
   - component: {fileID: 1952658741}
   - component: {fileID: 1952658740}
+  - component: {fileID: 1952658745}
   m_Layer: 0
   m_Name: testSphere (1)
   m_TagString: Untagged
@@ -1087,7 +1163,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952658739}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4.55
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1169,3 +1245,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1952658745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952658739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7458de570eca15a4e8fdbf548b91a5a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1

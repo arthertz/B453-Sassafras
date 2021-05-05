@@ -1,0 +1,29 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2571063494	Drone_Moving			\Default Work Unit\Drone_Moving	
+	3519287398	Drone_Cam_Moving			\Default Work Unit\Drone_Cam_Moving	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1382379429	Drone_Speed			\Default Work Unit\Drone_Speed	
+	2021037140	Room_Size			\Default Work Unit\Room_Size	
+	3300680795	Drone_Cam_Move			\Default Work Unit\Drone_Cam_Move	
+
+Modulator LFO	ID	Name			Wwise Object Path	Notes
+	245566779	Modulator LFO (Custom)				
+
+Modulator Envelope	ID	Name			Wwise Object Path	Notes
+	49554728	Modulator Envelope (Custom)				
+	585347764	Modulator Envelope (Custom)				
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1807895366	Main_Verb			\Default Work Unit\Master Audio Bus\Main_Verb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	415841907	Space_Garage	Wwise RoomVerb			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	99246126	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\Motor\Wwise Synth One	
+	871440083	CamMove	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\CamMove\CamMove	
+

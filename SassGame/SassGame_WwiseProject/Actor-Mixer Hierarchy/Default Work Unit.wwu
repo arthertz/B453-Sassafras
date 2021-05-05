@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Drone" ID="{DEBD04B9-A221-42EB-9C8B-5BC7FD21F369}" ShortID="393761331">
+					<PropertyList>
+						<Property Name="Lowpass" Type="int16">
+							<ValueList>
+								<Value>25</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-300</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5F2C642C-7DD7-43FA-8457-313D00B3BEF1}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Motor" ID="{3021D7BE-4D42-4F58-B5FE-6ACBBFA83E66}" ShortID="1035085077">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>44</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5F2C642C-7DD7-43FA-8457-313D00B3BEF1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Main_Verb" ID="{E6B4122C-C923-48F4-B1DD-B0547AC69351}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Wwise Synth One" ID="{38DA8089-84E3-45D4-BA2F-7F172A2B30FD}" ShortID="99246126" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+									<PropertyList>
+										<Property Name="FmAmount" Type="Real32" Value="14.2"/>
+										<Property Name="FrequencyMode" Type="int32" Value="1"/>
+										<Property Name="NoiseLevel" Type="Real32" Value="4"/>
+										<Property Name="NoiseShape" Type="int32" Value="2"/>
+										<Property Name="Osc1Level" Type="Real32" Value="-2">
+											<RTPCList>
+												<RTPC Name="" ID="{23842773-A631-4665-BB3C-F089D53C8E39}" ShortID="282173557">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Speed" ID="{E1946CCC-ACC8-4110-AFA2-CF59523F34D0}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{32860F09-19A0-4A1B-9BED-C2435682AA83}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-3.726</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc1Pwm" Type="Real32" Value="46.1"/>
+										<Property Name="Osc1Transpose" Type="int32" Value="-834">
+											<RTPCList>
+												<RTPC Name="" ID="{4E7A6237-1AE0-4452-BB85-58A454574D01}" ShortID="597009079">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Speed" ID="{E1946CCC-ACC8-4110-AFA2-CF59523F34D0}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{50CCCE9E-E158-435C-AAE4-CD86D7A47895}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>545</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc1Waveform" Type="int32" Value="2"/>
+										<Property Name="Osc2Level" Type="Real32" Value="-2">
+											<RTPCList>
+												<RTPC Name="" ID="{45810F16-D520-4B4F-B204-84AEF4B42B60}" ShortID="763444736">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Speed" ID="{E1946CCC-ACC8-4110-AFA2-CF59523F34D0}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{2AB1D960-FB95-44A3-86DB-DDE8C4FC9103}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-3.49641</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc2Pwm" Type="Real32" Value="60"/>
+										<Property Name="Osc2Transpose" Type="int32" Value="710">
+											<RTPCList>
+												<RTPC Name="" ID="{A83772C1-3F19-42CB-B4C6-D50C439A2A47}" ShortID="587220338">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Speed" ID="{E1946CCC-ACC8-4110-AFA2-CF59523F34D0}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{8AAE0C84-4D44-4394-A2ED-DCD3A901554B}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>504</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+												<RTPC Name="" ID="{B84243CA-EE35-4E65-A67D-3213BB7719CD}" ShortID="598074878">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorLfo Name="Modulator LFO (Custom)" ID="{515EFED4-3FBC-46D9-9CE5-4FA48BF9EB49}" ShortID="245566779">
+																	<PropertyList>
+																		<Property Name="LfoAttack" Type="Real64" Value="1.84"/>
+																		<Property Name="LfoDepth" Type="Real64" Value="43.7"/>
+																		<Property Name="LfoFrequency" Type="Real64" Value="0.18"/>
+																		<Property Name="LfoWaveform" Type="int32" Value="1"/>
+																	</PropertyList>
+																</ModulatorLfo>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{01BE3BA7-9EDF-49BA-AC39-A5638ACF6174}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>1046</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>1130</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc2Waveform" Type="int32" Value="1"/>
+										<Property Name="OutputLevel" Type="Real32" Value="-10">
+											<RTPCList>
+												<RTPC Name="" ID="{C831B77A-78F5-43E3-8EA7-96C97D2B5039}" ShortID="512005779">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{A1E3617B-7779-40C7-AFD3-26BADC229241}" ShortID="585347764">
+																	<PropertyList>
+																		<Property Name="EnvelopeAttackCurve" Type="Real64" Value="72"/>
+																		<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.711"/>
+																		<Property Name="EnvelopeDecayTime" Type="Real64" Value="0.379"/>
+																		<Property Name="EnvelopeReleaseTime" Type="Real64" Value="0.726"/>
+																		<Property Name="EnvelopeSustainLevel" Type="Real64" Value="80"/>
+																	</PropertyList>
+																</ModulatorEnvelope>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{E2523312-5FB3-41EE-9BE5-2261D543B463}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Wwise Synth One" ID="{38DA8089-84E3-45D4-BA2F-7F172A2B30FD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="CamMove" ID="{FBE7C44D-5786-4743-819A-26684061E805}" ShortID="1026213542">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>24</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>15</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>230</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5F2C642C-7DD7-43FA-8457-313D00B3BEF1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="CamMove" ID="{2CF2EC45-F940-4FBE-A1FD-E5972CCEBDBD}" ShortID="871440083" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+									<PropertyList>
+										<Property Name="BaseFrequency" Type="Real32" Value="591"/>
+										<Property Name="FmAmount" Type="Real32" Value="10.5"/>
+										<Property Name="NoiseLevel" Type="Real32" Value="-14"/>
+										<Property Name="Osc1Transpose" Type="int32">
+											<RTPCList>
+												<RTPC Name="" ID="{7DAAC470-9544-4D97-8B43-5E16FCC82144}" ShortID="385263552">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Cam_Move" ID="{147BB51B-09A6-48C3-88AF-B01B9D8A0EFC}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{B7033152-5824-42A9-937F-68514D2B0B5E}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>167</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc1Waveform" Type="int32" Value="3"/>
+										<Property Name="Osc2Level" Type="Real32" Value="-4">
+											<RTPCList>
+												<RTPC Name="" ID="{F06C219F-082F-4A03-9A67-6881B69A5D8B}" ShortID="655685508">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Cam_Move" ID="{147BB51B-09A6-48C3-88AF-B01B9D8A0EFC}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{891FF416-F6D7-4972-8D6A-C4A135A95415}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+										<Property Name="Osc2Transpose" Type="int32" Value="-500"/>
+										<Property Name="Osc2Waveform" Type="int32" Value="1"/>
+										<Property Name="OutputLevel" Type="Real32" Value="-6">
+											<RTPCList>
+												<RTPC Name="" ID="{E336F36C-61A7-49CC-A479-59926F294224}" ShortID="141926785">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Drone_Cam_Move" ID="{147BB51B-09A6-48C3-88AF-B01B9D8A0EFC}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{CFAC3D68-98CC-4E41-B856-B4B78E2768BF}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+												<RTPC Name="" ID="{D1711CD1-9C71-499C-B823-FED806FFB3F7}" ShortID="642606037">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{BC7824A6-384E-479B-BD23-BB02E08F0956}" ShortID="49554728">
+																	<PropertyList>
+																		<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.01"/>
+																	</PropertyList>
+																</ModulatorEnvelope>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{EFB2A64C-31D9-45D2-B8D4-DF9D59372D16}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="CamMove" ID="{2CF2EC45-F940-4FBE-A1FD-E5972CCEBDBD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

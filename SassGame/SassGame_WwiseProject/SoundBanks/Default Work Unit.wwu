@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8CCB5CEE-6B85-4FA6-8EB8-4A6FA1EFB46A}" SchemaVersion="103">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{8CCB5CEE-6B85-4FA6-8EB8-4A6FA1EFB46A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main_SoundBank" ID="{98AA6910-91B8-498E-9FEB-C158C4A34FBB}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Drone_Cam_Moving" ID="{17C657EA-C099-4777-A580-2FC4659E2F51}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Main_Verb" ID="{E6B4122C-C923-48F4-B1DD-B0547AC69351}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Drone_Moving" ID="{A0F84387-9312-4A8D-AF7C-5A91B5B6BAE7}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2594804661">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
+			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="2021037140" Name="Room_Size" ObjectPath="\Game Parameters\Default Work Unit\Room_Size"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="2228651116" Language="SFX" Hash="1862550110">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main_SoundBank</ObjectPath>
+			<ShortName>Main_SoundBank</ShortName>
+			<Path>Main_SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3519287398" Name="Drone_Cam_Moving" ObjectPath="\Events\Default Work Unit\Drone_Cam_Moving" DurationType="Unknown"/>
+				<Event Id="2571063494" Name="Drone_Moving" ObjectPath="\Events\Default Work Unit\Drone_Moving" DurationType="Unknown">
+					<AuxBusSends>
+						<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
+					</AuxBusSends>
+				</Event>
+			</IncludedEvents>
+			<IncludedAuxBusses>
+				<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
+			</IncludedAuxBusses>
+			<GameParameters>
+				<GameParameter Id="1382379429" Name="Drone_Speed" ObjectPath="\Game Parameters\Default Work Unit\Drone_Speed"/>
+				<GameParameter Id="2021037140" Name="Room_Size" ObjectPath="\Game Parameters\Default Work Unit\Room_Size"/>
+				<GameParameter Id="3300680795" Name="Drone_Cam_Move" ObjectPath="\Game Parameters\Default Work Unit\Drone_Cam_Move"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

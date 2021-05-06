@@ -5,6 +5,8 @@
 			<ChildrenList>
 				<ActorMixer Name="Drone" ID="{DEBD04B9-A221-42EB-9C8B-5BC7FD21F369}" ShortID="393761331">
 					<PropertyList>
+						<Property Name="3DPosition" Type="int16" Value="2"/>
+						<Property Name="EnableAttenuation" Type="bool" Value="False"/>
 						<Property Name="Lowpass" Type="int16">
 							<ValueList>
 								<Value>25</Value>
@@ -24,6 +26,9 @@
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
 						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Main_Verb" ID="{E6B4122C-C923-48F4-B1DD-B0547AC69351}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Motor" ID="{3021D7BE-4D42-4F58-B5FE-6ACBBFA83E66}" ShortID="1035085077">
@@ -33,7 +38,6 @@
 										<Value>44</Value>
 									</ValueList>
 								</Property>
-								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -426,6 +430,7 @@
 										<Value>12</Value>
 									</ValueList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>6</Value>
@@ -524,6 +529,9 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<PositioningInfo>
+						<Position Name="" ID="{48376CD8-11AD-4A14-A597-BB8F6D0E8602}"/>
+					</PositioningInfo>
 					<ObjectLists/>
 				</ActorMixer>
 			</ChildrenList>

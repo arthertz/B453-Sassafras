@@ -13,7 +13,11 @@
 						<Property Name="InitialValue" Type="Real64" Value="0"/>
 					</PropertyList>
 				</GameParameter>
-				<GameParameter Name="Room_Size" ID="{4BA27EDC-D2AE-45F3-8580-DA2B396C38B1}"/>
+				<GameParameter Name="Room_Size" ID="{4BA27EDC-D2AE-45F3-8580-DA2B396C38B1}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="70"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

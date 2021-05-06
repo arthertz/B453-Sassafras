@@ -1497,12 +1497,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>0.2</YPos>
+																<YPos>0.72077</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>4.13733</YPos>
+																<YPos>8.20883</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1527,12 +1527,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>0.02363</YPos>
+																<YPos>0.63361</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>-6.53232</YPos>
+																<YPos>-1.73202</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1548,7 +1548,7 @@
 										<Property Name="Filter3Freq" Type="Real32" Value="9290"/>
 										<Property Name="Filter3Gain" Type="Real32" Value="0.5"/>
 										<Property Name="Filter3InsertPos" Type="int32" Value="1"/>
-										<Property Name="HFDamping" Type="Real32" Value="4.45"/>
+										<Property Name="HFDamping" Type="Real32" Value="10"/>
 										<Property Name="PreDelay" Type="Real32" Value="26">
 											<RTPCList>
 												<RTPC Name="" ID="{5EE655F0-BEA7-4ABB-A384-57F7AB96A7CE}" ShortID="407086044">
@@ -1564,12 +1564,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>25</YPos>
+																<YPos>5.67633</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>93.11941</YPos>
+																<YPos>49.64115</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1577,9 +1577,36 @@
 												</RTPC>
 											</RTPCList>
 										</Property>
-										<Property Name="ReverbLevel" Type="Real32" Value="-16"/>
+										<Property Name="ReverbLevel" Type="Real32" Value="-16">
+											<RTPCList>
+												<RTPC Name="" ID="{BF3AADA2-7ED8-455E-9957-0C3B52C9DC5D}" ShortID="619088675">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="Room_Size" ID="{4BA27EDC-D2AE-45F3-8580-DA2B396C38B1}" WorkUnitID="{8E210DA3-A861-4855-B2C4-900481D0ACB9}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{87279F83-D708-42C4-A3D2-40EE810F4FEE}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-2.56906</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>2.07564</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
 										<Property Name="RoomShape" Type="Real32" Value="69"/>
-										<Property Name="RoomSize" Type="Real32" Value="38"/>
+										<Property Name="RoomSize" Type="Real32" Value="48"/>
 										<Property Name="StereoWidth" Type="Real32" Value="150"/>
 									</PropertyList>
 								</Effect>
@@ -1672,7 +1699,8 @@
 										<Property Name="DelayTime" Type="Real32" Value="10"/>
 										<Property Name="ModDepth" Type="Real32" Value="60"/>
 										<Property Name="ModFrequency" Type="Real32" Value="0.85"/>
-										<Property Name="ModPWM" Type="Real32" Value="0"/>
+										<Property Name="ModPWM" Type="Real32" Value="11"/>
+										<Property Name="ModSmoothing" Type="Real32" Value="42"/>
 									</PropertyList>
 								</Effect>
 							</ChildrenList>
@@ -2052,8 +2080,12 @@
 								</Effect>
 								<Effect Name="Monsterize" ID="{99F80B38-1C45-42CE-9BCD-E94F3885DCAA}" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
 									<PropertyList>
-										<Property Name="FilterFrequency" Type="Real32" Value="2000"/>
-										<Property Name="Pitch" Type="Real32" Value="-1200"/>
+										<Property Name="DelayTime" Type="Real32" Value="24"/>
+										<Property Name="DryLevel" Type="Real32" Value="-5"/>
+										<Property Name="FilterFrequency" Type="Real32" Value="562"/>
+										<Property Name="FilterType" Type="int32" Value="4"/>
+										<Property Name="Pitch" Type="Real32" Value="-800"/>
+										<Property Name="WetLevel" Type="Real32" Value="-6"/>
 									</PropertyList>
 								</Effect>
 								<Effect Name="Voice_CenterOnly_Lowered" ID="{179558E7-E6DF-4021-9D38-A284DF53B7E5}" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">

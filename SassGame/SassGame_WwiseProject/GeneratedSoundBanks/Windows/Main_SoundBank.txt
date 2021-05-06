@@ -25,6 +25,8 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	415841907	Space_Garage	Wwise RoomVerb			
+	1431265797	Monsterize	Wwise Pitch Shifter			
+	1674078407	Chorus_Like	Wwise Flanger			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	99246126	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\Motor\Wwise Synth One	

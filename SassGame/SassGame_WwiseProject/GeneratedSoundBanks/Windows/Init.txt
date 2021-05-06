@@ -9,6 +9,8 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	415841907	Space_Garage	Wwise RoomVerb			
+	1431265797	Monsterize	Wwise Pitch Shifter			
+	1674078407	Chorus_Like	Wwise Flanger			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

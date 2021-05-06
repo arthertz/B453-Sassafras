@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3206041707">
+		<SoundBank Id="1355168291" Language="SFX" Hash="586611868">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -22,18 +22,26 @@
 				<GameParameter Id="2021037140" Name="Room_Size" ObjectPath="\Game Parameters\Default Work Unit\Room_Size"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2228651116" Language="SFX" Hash="276310255">
+		<SoundBank Id="2228651116" Language="SFX" Hash="2137491052">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main_SoundBank</ObjectPath>
 			<ShortName>Main_SoundBank</ShortName>
 			<Path>Main_SoundBank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3519287398" Name="Drone_Cam_Moving" ObjectPath="\Events\Default Work Unit\Drone_Cam_Moving" DurationType="Unknown"/>
+				<Event Id="3519287398" Name="Drone_Cam_Moving" ObjectPath="\Events\Default Work Unit\Drone_Cam_Moving" DurationType="Unknown">
+					<AuxBusSends>
+						<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
+					</AuxBusSends>
+				</Event>
 				<Event Id="2571063494" Name="Drone_Moving" ObjectPath="\Events\Default Work Unit\Drone_Moving" DurationType="Unknown">
 					<AuxBusSends>
 						<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
 					</AuxBusSends>
 				</Event>
-				<Event Id="2450601436" Name="Play_ShortSignal" ObjectPath="\Events\Default Work Unit\Play_ShortSignal" DurationType="Unknown"/>
+				<Event Id="2450601436" Name="Play_ShortSignal" ObjectPath="\Events\Default Work Unit\Play_ShortSignal" DurationType="Unknown">
+					<AuxBusSends>
+						<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
+					</AuxBusSends>
+				</Event>
 			</IncludedEvents>
 			<IncludedAuxBusses>
 				<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>

@@ -17,6 +17,8 @@ public class Chunk : MonoBehaviour
 
     Bounds chunkBounds;
 
+    static internal string DefaultLayerName = "Procedural";
+
     Mesh mesh;
 
     Plane[] planes;
@@ -24,7 +26,6 @@ public class Chunk : MonoBehaviour
     GameObject meshObj;
 
     bool initialized = false;
-
 
     float lastSeen = 0f;
 
@@ -52,6 +53,8 @@ public class Chunk : MonoBehaviour
         meshObj.AddComponent<MeshCollider>();
 
         meshObj.transform.parent = transform;
+
+        meshObj.layer = LayerMask.NameToLayer(DefaultLayerName);    
 
         initialized = true;
     }

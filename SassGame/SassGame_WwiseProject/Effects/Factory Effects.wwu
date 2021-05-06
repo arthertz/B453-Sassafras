@@ -1502,7 +1502,7 @@
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>8.20883</YPos>
+																<YPos>9.71434</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1527,12 +1527,12 @@
 														<PointList>
 															<Point>
 																<XPos>0</XPos>
-																<YPos>0.63361</YPos>
+																<YPos>1.97827</YPos>
 																<Flags>5</Flags>
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>-1.73202</YPos>
+																<YPos>-2.77572</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1569,7 +1569,7 @@
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>49.64115</YPos>
+																<YPos>72.82956</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1597,7 +1597,7 @@
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>2.07564</YPos>
+																<YPos>4.00051</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -1606,7 +1606,7 @@
 											</RTPCList>
 										</Property>
 										<Property Name="RoomShape" Type="Real32" Value="69"/>
-										<Property Name="RoomSize" Type="Real32" Value="48"/>
+										<Property Name="RoomSize" Type="Real32" Value="52"/>
 										<Property Name="StereoWidth" Type="Real32" Value="150"/>
 									</PropertyList>
 								</Effect>

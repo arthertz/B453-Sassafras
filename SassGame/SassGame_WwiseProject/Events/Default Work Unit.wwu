@@ -36,6 +36,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Noise" ID="{43D173F8-F716-4808-8CE1-9B128C739221}">
+					<ChildrenList>
+						<Action Name="" ID="{3895D462-0625-4377-BA4E-689A69554F7A}" ShortID="207583380">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Noise" ID="{52D66D23-B478-42BD-906C-17AEC19B7029}" WorkUnitID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

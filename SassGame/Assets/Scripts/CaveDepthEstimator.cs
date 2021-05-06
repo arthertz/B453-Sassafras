@@ -12,7 +12,7 @@ public class CaveDepthEstimator : MonoBehaviour
 
 
     [SerializeField] bool debug = false;
-    [SerializeField] float maxDepth = 999f;
+    [SerializeField] float maxDepth = 100f;
     [SerializeField] float minDepth = 0f;
     [SerializeField] private int initialRays = 10;
     [SerializeField] private int burstSize = 5;

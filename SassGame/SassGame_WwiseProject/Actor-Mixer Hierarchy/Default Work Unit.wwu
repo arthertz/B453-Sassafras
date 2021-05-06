@@ -534,6 +534,70 @@
 					</PositioningInfo>
 					<ObjectLists/>
 				</ActorMixer>
+				<Sound Name="Noise" ID="{52D66D23-B478-42BD-906C-17AEC19B7029}" ShortID="429657245">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5F2C642C-7DD7-43FA-8457-313D00B3BEF1}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+							<ObjectRef Name="New_Wwise_Pitch_Shifter" ID="{F1EB008E-A004-4A3A-95D0-D1409F5D22FB}" WorkUnitID="{F98E7734-03E0-4F50-8B8E-98E636AC05A5}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<SourcePlugin Name="Wwise Synth One" ID="{C9BE1599-76BA-4BC2-A5BA-E7A059B6777E}" ShortID="616232843" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+							<PropertyList>
+								<Property Name="BaseFrequency" Type="Real32" Value="72"/>
+								<Property Name="FmAmount" Type="Real32" Value="15.3"/>
+								<Property Name="NoiseLevel" Type="Real32" Value="-17"/>
+								<Property Name="NoiseShape" Type="int32" Value="1"/>
+								<Property Name="Osc1Level" Type="Real32" Value="-21"/>
+								<Property Name="Osc2Level" Type="Real32" Value="-96"/>
+								<Property Name="OutputLevel" Type="Real32" Value="-7">
+									<RTPCList>
+										<RTPC Name="" ID="{0764F6F8-1CAA-42E6-A507-040506A80312}" ShortID="442403849">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<Custom>
+														<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{56164FB4-FA08-4AD1-BBC9-2A69E7EC72DD}" ShortID="1065778233">
+															<PropertyList>
+																<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.01"/>
+															</PropertyList>
+														</ModulatorEnvelope>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{3E581A2D-EA20-4193-B15C-40A329151AFD}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-96</YPos>
+														<Flags>21</Flags>
+													</Point>
+													<Point>
+														<XPos>1</XPos>
+														<YPos>0</YPos>
+														<Flags>53</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+							<Language>SFX</Language>
+						</SourcePlugin>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Wwise Synth One" ID="{C9BE1599-76BA-4BC2-A5BA-E7A059B6777E}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

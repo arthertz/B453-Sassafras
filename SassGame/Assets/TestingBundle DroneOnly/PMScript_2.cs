@@ -19,7 +19,6 @@ public class PMScript_2 : MonoBehaviour
     private float DroneSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
     [SerializeField] float DroneAudioRevSpeed = 60; //Changes how fast/slow engine sound revs up/down
     private float DroneCamSpeedRTPC = 0; //Drone speed relative from 0 - 100 for Wwise intergration
-    [SerializeField] float DroneCamAudioRevSpeed = 80; //Changes how fast/slow engine sound revs up/down
     
     private void OnEnable() {
         //Reset the slate

@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1932796752	Play_Noise			\Default Work Unit\Play_Noise	
 	2450601436	Play_ShortSignal			\Default Work Unit\Play_ShortSignal	
 	2571063494	Drone_Moving			\Default Work Unit\Drone_Moving	
 	3519287398	Drone_Cam_Moving			\Default Work Unit\Drone_Cam_Moving	
@@ -16,6 +17,7 @@ Modulator Envelope	ID	Name			Wwise Object Path	Notes
 	49554728	Modulator Envelope (Custom)				
 	470532564	Modulator Envelope (Custom)				
 	585347764	Modulator Envelope (Custom)				
+	1065778233	Modulator Envelope (Custom)				
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
@@ -25,11 +27,13 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	415841907	Space_Garage	Wwise RoomVerb			
+	1136652168	New_Wwise_Pitch_Shifter	Wwise Pitch Shifter			
 	1431265797	Monsterize	Wwise Pitch Shifter			
 	1674078407	Chorus_Like	Wwise Flanger			
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	99246126	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\Motor\Wwise Synth One	
 	113310906	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\ShortSignal\Wwise Synth One	
+	616232843	Wwise Synth One	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Noise\Wwise Synth One	
 	871440083	CamMove	Wwise Synth One		\Actor-Mixer Hierarchy\Default Work Unit\Drone\CamMove\CamMove	
 

@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 97e60e80bf37c4449a89f6ce743cd567
     GuidInternal: 
-    m_lastTime: -8585812746556154816
+    m_lastTime: -8585812726332744889
     List:
     - name: Main_Verb
       guid: 2c12b4e623c9f448b1ddb0547ac69351
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ee5ccb8c856ba64f8eb84a6fa1efb46a
     GuidInternal: 
-    m_lastTime: -8585812763662535808
+    m_lastTime: -8585812689779500454
     List:
     - name: Main_SoundBank
       guid: 1069aa98b8918e499febc158c4a34fbb
@@ -111,7 +111,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 4497cbf5b09dc4478afe9d207989d6c6
     GuidInternal: 
-    m_lastTime: -8585812763662186729
+    m_lastTime: -8585812689779600193
     List:
     - name: Drone_Cam_Moving
       guid: ea57c61799c07747a5802fc4659e2f51
@@ -147,6 +147,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Noise
+      guid: f873d14316f708488ce19b128c739221
+      id: 1932796752
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4497cbf5b09dc4478afe9d207989d6c6
+      - ElementName: Play_Noise
+        ObjectType: 3
+        guid: f873d14316f708488ce19b128c739221
+      Path: Events\Default Work Unit\Play_Noise
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_ShortSignal
       guid: d87b674b6fdf3542be6611d293dc2e25
       id: 2450601436
@@ -176,7 +193,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: a30d218e61a85548b2c4900481d0acb9
     GuidInternal: 
-    m_lastTime: -8585812745152166269
+    m_lastTime: -8585812726332844755
     List:
     - name: Drone_Cam_Move
       guid: 1bb57b14a609c34888afb01b9d8a0efc

@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_ShortSignal" ID="{4B677BD8-DF6F-4235-BE66-11D293DC2E25}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Drone_Cam_Moving" ID="{17C657EA-C099-4777-A580-2FC4659E2F51}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Noise" ID="{43D173F8-F716-4808-8CE1-9B128C739221}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Main_Verb" ID="{E6B4122C-C923-48F4-B1DD-B0547AC69351}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Drone_Moving" ID="{A0F84387-9312-4A8D-AF7C-5A91B5B6BAE7}" WorkUnitID="{F5CB9744-9DB0-47C4-8AFE-9D207989D6C6}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

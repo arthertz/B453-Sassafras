@@ -1,17 +1,13 @@
-Heeey this is the readme for the noise branch
-If you get console errors, you can either enter playmode
-or do the following:
+Heeey this is the readme for SassGame!
+This project was the team effort of Oli Jung, Mark Borokowski and Arthur Hertz.
+I (Arthur) wrote and integrated all of the level generation code, putting together the 3D noise, marching cubes, and engineering a chunking/streaming solution from scratch.
+Mark has been working on shaders for the procedural terrain that work without UV maps at all, and Oli has been integrating the project with the WWise middleware and diving deep
+into procedural sound design.
 
--select all the noiseWindows
+This project should just boot up and play, but if it's a little laggy I recommend you either build it or check out one of the release builds I already made in the repository.
+They are much smoother and use incremental garbage collection to help with the world loading, although you won't get to see the chunk visibility gizmo I wrote.
 
--right click the generator component
-
--click 'generate perlin cave'
-
--You're done, the cave will generate in the editor
-
--No more errors
-
+If you have any questions on getting the project to run smoothly please email me at arthertz@iu.edu
 
 Best,
 Arthur
@@ -24,5 +20,5 @@ https://github.com/Scrawk/Marching-Cubes
 The LibNoise package w/ bindings for Unity (LGPL license)
 https://github.com/ricardojmendez/LibNoise.Unity
 
-Keijiro Takahashi's Triplanar mapping shader for UV-less texturing (public domain)
-https://github.com/keijiro/StandardTriplanar
+Link to download WWise middleware (you probably won't need it):
+https://www.audiokinetic.com/download/

@@ -217,20 +217,6 @@ public class Cave : MonoBehaviour
                 new Perlin (frequency*2, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium),
                 new Perlin (frequency, lacunarity, persistence, octaves, seed.GetHashCode(), QualityMode.Medium)));
     }
-
-    Worm RandomWorm () {
-
-        return new Worm(
-            Random.Range(-25, 25),
-            Random.Range(0, 360),
-            new Vector3 (
-                Random.Range(0, chunkSize*chunkDistance),
-                chunkSize*chunkDistance,
-                Random.Range(0, chunkSize*chunkDistance)));
-    }
-
-
-    
     private void OnDrawGizmos() {
 
         Gizmos.DrawWireCube(transform.position + Vector3.one * chunkDistance/2 *chunkSize, Vector3.one * chunkSize * chunkDistance);

@@ -44,6 +44,14 @@ public class CaveDepthEstimator : MonoBehaviour
         StartCoroutine( ResampleEstimate() );
     }
 
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
+
+    private void OnDestroy() {
+        StopAllCoroutines();
+    }
+
     private void SampleRandomRay () {
         Ray randomRay = new Ray(transform.position, Random.onUnitSphere);
 

@@ -494,11 +494,6 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.g
       value: 0.06666667
       objectReference: {fileID: 0}
-    - target: {fileID: 3743225194973592966, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
       propertyPath: sensitivity.x
@@ -644,7 +639,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-<<<<<<< HEAD
 --- !u!4 &684496387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4554250463035315722, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
@@ -652,9 +646,6 @@ Transform:
   m_PrefabInstance: {fileID: 282664383}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &684496388
-=======
---- !u!114 &684496380
->>>>>>> origin/DepthGuesser
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -663,7 +654,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 684496378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: ae9c4783ea862984d8868bdf6e300e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -702,21 +692,6 @@ Transform:
   m_Father: {fileID: 684496387}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  m_Script: {fileID: 11500000, guid: e803dab7d512b164b86d2e9ca95c0c68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  maxDepth: 999
-  minDepth: 0
-  initialRays: 10
-  burstSize: 5
-  numBursts: 5
-  RayStagger: 0.1
-  RefreshedEstimate:
-    m_PersistentCalls:
-      m_Calls: []
->>>>>>> origin/DepthGuesser
 --- !u!1 &946860439
 GameObject:
   m_ObjectHideFlags: 0

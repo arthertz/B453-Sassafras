@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: d2e4332804db0449b6b98cea0bb1c845
     GuidInternal: 
-    m_lastTime: -8585818287076199217
+    m_lastTime: -8585812776782705557
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 97e60e80bf37c4449a89f6ce743cd567
     GuidInternal: 
-    m_lastTime: -8585818287076269210
+    m_lastTime: -8585812776782855148
     List:
     - name: Main_Verb
       guid: 2c12b4e623c9f448b1ddb0547ac69351
@@ -83,7 +83,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: ee5ccb8c856ba64f8eb84a6fa1efb46a
     GuidInternal: 
-    m_lastTime: -8585818287076219179
+    m_lastTime: -8585812763662535808
     List:
     - name: Main_SoundBank
       guid: 1069aa98b8918e499febc158c4a34fbb
@@ -111,7 +111,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 4497cbf5b09dc4478afe9d207989d6c6
     GuidInternal: 
-    m_lastTime: -8585818287076319208
+    m_lastTime: -8585812763662186729
     List:
     - name: Drone_Cam_Moving
       guid: ea57c61799c07747a5802fc4659e2f51
@@ -147,6 +147,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_ShortSignal
+      guid: d87b674b6fdf3542be6611d293dc2e25
+      id: 2450601436
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 4497cbf5b09dc4478afe9d207989d6c6
+      - ElementName: Play_ShortSignal
+        ObjectType: 3
+        guid: d87b674b6fdf3542be6611d293dc2e25
+      Path: Events\Default Work Unit\Play_ShortSignal
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -159,7 +176,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: a30d218e61a85548b2c4900481d0acb9
     GuidInternal: 
-    m_lastTime: -8585818287076319208
+    m_lastTime: -8585812776782934939
     List:
     - name: Drone_Cam_Move
       guid: 1bb57b14a609c34888afb01b9d8a0efc
@@ -215,7 +232,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: e84d4370df70ab429e798ac15b923eda
     GuidInternal: 
-    m_lastTime: -8585818287076214210
+    m_lastTime: -8585812776782725495
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -229,7 +246,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 65776097485e28468525e9bd793ccb21
     GuidInternal: 
-    m_lastTime: -8585818287076209221
+    m_lastTime: -8585812776782715521
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -243,7 +260,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 2a285f546ec21247b8464641c41ab7a6
     GuidInternal: 
-    m_lastTime: -8585818287076204210
+    m_lastTime: -8585812776782715521
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0100000003000000040000000500000006000000070000000b0000000c000000290000002a000000

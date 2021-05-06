@@ -73,7 +73,7 @@
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>-0</YPos>
+																<YPos>0</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -251,6 +251,11 @@
 						</Sound>
 						<Sound Name="CamMove" ID="{FBE7C44D-5786-4743-819A-26684061E805}" ShortID="1026213542">
 							<PropertyList>
+								<Property Name="GameAuxSendVolume" Type="Real64">
+									<ValueList>
+										<Value>-14</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Highpass" Type="int16">
 									<ValueList>
 										<Value>24</Value>
@@ -258,7 +263,7 @@
 								</Property>
 								<Property Name="Lowpass" Type="int16">
 									<ValueList>
-										<Value>15</Value>
+										<Value>13</Value>
 									</ValueList>
 								</Property>
 								<Property Name="OverrideGameAuxSends" Type="bool" Value="True"/>
@@ -267,9 +272,10 @@
 										<Value>230</Value>
 									</ValueList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -411,6 +417,110 @@
 							<ObjectLists/>
 							<ActiveSourceList>
 								<ActiveSource Name="CamMove" ID="{2CF2EC45-F940-4FBE-A1FD-E5972CCEBDBD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ShortSignal" ID="{EA392E3C-5FFA-4A59-B638-622DE8AB441E}" ShortID="126338428">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{5F2C642C-7DD7-43FA-8457-313D00B3BEF1}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{800EE697-37BF-44C4-9A89-F6CE743CD567}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Wwise Synth One" ID="{375DC50F-A2BC-4741-8036-545A2387B221}" ShortID="113310906" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+									<PropertyList>
+										<Property Name="FmAmount" Type="Real32" Value="34.7"/>
+										<Property Name="FrequencyMode" Type="int32" Value="1"/>
+										<Property Name="Osc1Level" Type="Real32" Value="-7.5"/>
+										<Property Name="Osc1Pwm" Type="Real32" Value="41.9"/>
+										<Property Name="Osc1Waveform" Type="int32" Value="1"/>
+										<Property Name="Osc2Level" Type="Real32" Value="-13"/>
+										<Property Name="Osc2Pwm" Type="Real32" Value="44"/>
+										<Property Name="Osc2Transpose" Type="int32" Value="600"/>
+										<Property Name="Osc2Waveform" Type="int32" Value="3"/>
+										<Property Name="OutputLevel" Type="Real32" Value="-7">
+											<RTPCList>
+												<RTPC Name="" ID="{9CCDE12A-7AC2-4437-9A77-BE660EF35974}" ShortID="193433706">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<ObjectRef Name="MIDI note velocity" ID="{B618CC3D-04FA-4149-A36B-37B8A1F2B642}"/>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{C1C6D76E-A350-4CB1-8D7D-FF6D47A327A3}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-15.85217</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>127</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+												<RTPC Name="" ID="{E23D1A5F-E14C-4DF6-A94A-9A03C3F85DDA}" ShortID="386566822">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{25B7E4B3-2355-4F1A-B473-B4560837BD55}" ShortID="470532564">
+																	<PropertyList>
+																		<Property Name="EnvelopeAttackTime" Type="Real64" Value="0"/>
+																		<Property Name="EnvelopeAutoRelease" Type="bool" Value="True"/>
+																		<Property Name="EnvelopeDecayTime" Type="Real64" Value="0.042"/>
+																		<Property Name="EnvelopeReleaseTime" Type="Real64" Value="0.089"/>
+																		<Property Name="EnvelopeSustainLevel" Type="Real64" Value="0"/>
+																	</PropertyList>
+																</ModulatorEnvelope>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{E41F91E1-7A75-49C0-9C8D-66A7F080A591}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>7.21414</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Wwise Synth One" ID="{375DC50F-A2BC-4741-8036-545A2387B221}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

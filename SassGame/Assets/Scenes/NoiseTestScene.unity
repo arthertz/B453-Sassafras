@@ -514,6 +514,11 @@ PrefabInstance:
       propertyPath: acceleration.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3998191649749210440, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
+        type: 3}
+      propertyPath: DroneAudioRevSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 4554250462603876884, guid: 4e60df0e8ed509d43afbbd91f1c46c3f,
         type: 3}
       propertyPath: m_Range
@@ -634,6 +639,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &684496388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684496378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9c4783ea862984d8868bdf6e300e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onClick:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 922099b52269e6f48b42890173a35214,
+      type: 2}
 --- !u!1 &946860439
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_ShortSignal" ID="{4B677BD8-DF6F-4235-BE66-11D293DC2E25}">
+					<ChildrenList>
+						<Action Name="" ID="{A05B8B5A-89C3-453B-B5DD-1325E4813AA5}" ShortID="946173737">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="ShortSignal" ID="{EA392E3C-5FFA-4A59-B638-622DE8AB441E}" WorkUnitID="{3D7A90D4-20C7-4B62-91FB-9BC06525291E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

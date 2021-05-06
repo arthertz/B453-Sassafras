@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID DRONE_CAM_MOVING = 3519287398U;
         static const AkUniqueID DRONE_MOVING = 2571063494U;
+        static const AkUniqueID PLAY_SHORTSIGNAL = 2450601436U;
     } // namespace EVENTS
 
     namespace GAME_PARAMETERS

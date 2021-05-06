@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\GameProjects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\olijn\OneDrive\Documents\Unity Projects\B453-Sassafras\SassGame\SassGame_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -22,7 +22,7 @@
 				<GameParameter Id="2021037140" Name="Room_Size" ObjectPath="\Game Parameters\Default Work Unit\Room_Size"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="2228651116" Language="SFX" Hash="1862550110">
+		<SoundBank Id="2228651116" Language="SFX" Hash="276310255">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main_SoundBank</ObjectPath>
 			<ShortName>Main_SoundBank</ShortName>
 			<Path>Main_SoundBank.bnk</Path>
@@ -33,11 +33,13 @@
 						<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
 					</AuxBusSends>
 				</Event>
+				<Event Id="2450601436" Name="Play_ShortSignal" ObjectPath="\Events\Default Work Unit\Play_ShortSignal" DurationType="Unknown"/>
 			</IncludedEvents>
 			<IncludedAuxBusses>
 				<AuxBus Id="1807895366" Name="Main_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Main_Verb"/>
 			</IncludedAuxBusses>
 			<GameParameters>
+				<GameParameter Id="129" Name="MIDI note velocity" ObjectPath="MIDI\MIDI note velocity"/>
 				<GameParameter Id="1382379429" Name="Drone_Speed" ObjectPath="\Game Parameters\Default Work Unit\Drone_Speed"/>
 				<GameParameter Id="2021037140" Name="Room_Size" ObjectPath="\Game Parameters\Default Work Unit\Room_Size"/>
 				<GameParameter Id="3300680795" Name="Drone_Cam_Move" ObjectPath="\Game Parameters\Default Work Unit\Drone_Cam_Move"/>

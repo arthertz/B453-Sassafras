@@ -236,7 +236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &788899791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +283,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788899790}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0.06666667, b: 0.23529413, a: 1}
@@ -486,7 +486,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 963194227, guid: 21752288ac9079346a62e5a05b6bd4a1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 963194227, guid: 21752288ac9079346a62e5a05b6bd4a1, type: 3}
+      propertyPath: far clip plane
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578517676772242364, guid: 21752288ac9079346a62e5a05b6bd4a1,
+        type: 3}
+      propertyPath: speed
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3578517676772242364, guid: 21752288ac9079346a62e5a05b6bd4a1,
         type: 3}
@@ -516,7 +525,7 @@ PrefabInstance:
     - target: {fileID: 4172284252063002873, guid: 21752288ac9079346a62e5a05b6bd4a1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4172284252063002878, guid: 21752288ac9079346a62e5a05b6bd4a1,
         type: 3}

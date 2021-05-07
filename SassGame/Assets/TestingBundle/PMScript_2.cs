@@ -16,7 +16,8 @@ public class PMScript_2 : MonoBehaviour
     private Vector2 lastInputEvent;//The last recieved non-zerro input value
     private float inputLagTimer;//The time since the last recieved non-zero input value
     private float activeForwardSpeed, activeStrafeSpeed; //Horizontal/Vertical movement
-    private Vector3 bob;
+    private float bob;
+    Rigidbody rb;
 
     private void OnEnable() {
         //Reset the slate
@@ -59,6 +60,10 @@ public class PMScript_2 : MonoBehaviour
         } 
         return lastInputEvent;
     }
+        void Awake()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
         void Start()
     {
         Cursor.lockState = CursorLockMode.Confined; //Locks Cursor in window until ESC is pressed to leave game view
@@ -66,12 +71,27 @@ public class PMScript_2 : MonoBehaviour
     }
     void FixedUpdate()
     {
-        bob = new Vector3(0, period * Mathf.Sin(Time.time), 0);
+        bob = period * Mathf.Sin(Time.time);
+    
+        activeForwardSpeed = Input.GetAxis("Vertical") * speed;
+        activeStrafeSpeed = Input.GetAxis("Horizontal") * speed;
+        //Vector3 m_Input = new Vector3(activeStrafeSpeed, bob, activeForwardSpeed);
 
-        activeForwardSpeed = Input.GetAxisRaw("Vertical") * speed;
-        activeStrafeSpeed = Input.GetAxisRaw("Horizontal") * speed;
+        //rb.velocity = new Vector3(activeStrafeSpeed, bob , activeForwardSpeed);
+        //rb.velocity = transform.forward * activeForwardSpeed + transform.right * activeStrafeSpeed + bob;
+        if (Input.GetAxis("Vertical") + Input.GetAxis("Horizontal") != 0)
+        {
+            rb.MovePosition(transform.position + transform.forward * activeForwardSpeed + transform.right * activeStrafeSpeed + transform.up * bob);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
 
-        transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime) + (transform.right * activeStrafeSpeed * Time.deltaTime) + (bob);
+
+        //rb.AddForce(new Vector3((activeStrafeSpeed) - rb.velocity.x * Snappiness, (bob) - rb.velocity.y * Snappiness, (activeForwardSpeed) - rb.velocity.z * Snappiness));
+        //transform.position += (transform.forward * activeForwardSpeed * Time.deltaTime) + (transform.right * activeStrafeSpeed * Time.deltaTime) + (bob);
         //transform.position = Vector3.ClampMagnitude(transform.position, speed * speed);
             //Debug.Log("Y Position: " + transform.position.y);
     }
